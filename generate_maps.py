@@ -7,7 +7,6 @@ import geopandas as gpd
 import matplotlib
 matplotlib.use('Agg')
 import matplotlib.pyplot as plt
-from matplotlib.patches import Patch
 
 # ── paths ─────────────────────────────────────────────────────────────────────
 COUNTRIES_FILE  = 'countries.json'
@@ -204,11 +203,10 @@ for idx, (_, row) in enumerate(render_gdf.iterrows(), 1):
     fig.patch.set_facecolor(COLOR_OCEAN)
     ax.set_facecolor(COLOR_OCEAN)
 
-    if nbr_mask.any():
-        gdf[nbr_mask].plot(ax=ax, color=COLOR_NEIGHBOR, edgecolor='#ffffff', linewidth=BORDER_LINEWIDTH)
+    gdf[~focus_mask].plot(ax=ax, color=COLOR_NEIGHBOR, edgecolor='#ffffff', linewidth=BORDER_LINEWIDTH)
     gdf[focus_mask].plot(ax=ax, color=COLOR_FOCUS, edgecolor='#ffffff', linewidth=FOCUS_LINEWIDTH)
 
-    for _, nb in gdf[nbr_mask].iterrows():
+    for _, nb in gdf[~focus_mask].iterrows():
         pt = nb.geometry.representative_point()
         if xlim[0] <= pt.x <= xlim[1] and ylim[0] <= pt.y <= ylim[1]:
             ax.text(
@@ -233,13 +231,6 @@ for idx, (_, row) in enumerate(render_gdf.iterrows(), 1):
     ax.set_ylim(*ylim)
     ax.set_axis_off()
     ax.set_title(country, fontsize=TITLE_FONTSIZE, fontweight='bold', pad=10, color=COLOR_LABEL)
-
-    legend_handles = [
-        Patch(facecolor=COLOR_FOCUS,    edgecolor='#888', label=country),
-        Patch(facecolor=COLOR_NEIGHBOR, edgecolor='#888', label='Neighbors'),
-    ]
-    ax.legend(handles=legend_handles, loc='lower left', fontsize=LEGEND_FONTSIZE,
-              framealpha=0.85, edgecolor='#cccccc')
 
     plt.tight_layout(pad=0.4)
     safe_name = country.replace('/', '_').replace(' ', '_')
