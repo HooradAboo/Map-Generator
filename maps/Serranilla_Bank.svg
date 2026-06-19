@@ -6,7 +6,7 @@
   <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
    <cc:Work>
     <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
-    <dc:date>2026-06-19T08:14:19.818507</dc:date>
+    <dc:date>2026-06-19T08:36:37.110025</dc:date>
     <dc:format>image/svg+xml</dc:format>
     <dc:creator>
      <cc:Agent>
@@ -31,14 +31,14 @@ z
   <g id="axes_1">
    <g id="PatchCollection_1">
     <defs>
-     <path id="m9178c42993" d="M 233.755464 -243.72 
+     <path id="m516aeaacd6" d="M 233.755464 -243.72 
 L 234.773942 -244.713256 
 L 234.773942 -242.726744 
 z
 " style="stroke: #ffffff; stroke-width: 0.6"/>
     </defs>
-    <g clip-path="url(#p4567285bc7)">
-     <use xlink:href="#m9178c42993" x="0" y="510.357344" style="fill: #e74c3c; stroke: #ffffff; stroke-width: 0.6"/>
+    <g clip-path="url(#p820c008d58)">
+     <use xlink:href="#m516aeaacd6" x="0" y="510.357344" style="fill: #e74c3c; stroke: #ffffff; stroke-width: 0.6"/>
     </g>
    </g>
    <g id="text_1">
@@ -666,7 +666,7 @@ z
   </g>
  </g>
  <defs>
-  <clipPath id="p4567285bc7">
+  <clipPath id="p820c008d58">
    <rect x="7.2" y="30.117344" width="454.129406" height="473.04"/>
   </clipPath>
  </defs>

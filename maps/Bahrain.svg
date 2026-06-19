@@ -6,7 +6,7 @@
   <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
    <cc:Work>
     <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
-    <dc:date>2026-06-19T08:14:19.204481</dc:date>
+    <dc:date>2026-06-19T08:36:36.473775</dc:date>
     <dc:format>image/svg+xml</dc:format>
     <dc:creator>
      <cc:Agent>
@@ -31,7 +31,7 @@ z
   <g id="axes_1">
    <g id="PatchCollection_1">
     <defs>
-     <path id="m3419d200b2" d="M 175.244929 -275.505771 
+     <path id="m8b06174230" d="M 175.244929 -275.505771 
 L 175.244929 -279.201791 
 L 177.369351 -289.550646 
 L 178.785632 -292.13786 
@@ -79,8 +79,8 @@ L 175.95307 -272.918557
 z
 " style="stroke: #ffffff; stroke-width: 0.6"/>
     </defs>
-    <g clip-path="url(#p69b14f6965)">
-     <use xlink:href="#m3419d200b2" x="0" y="510.357344" style="fill: #e74c3c; stroke: #ffffff; stroke-width: 0.6"/>
+    <g clip-path="url(#p2eec05b733)">
+     <use xlink:href="#m8b06174230" x="0" y="510.357344" style="fill: #e74c3c; stroke: #ffffff; stroke-width: 0.6"/>
     </g>
    </g>
    <g id="text_1">
@@ -236,6 +236,89 @@ z
      <use xlink:href="#DejaVuSans-Bold-51" transform="translate(365.96875 0)"/>
     </g>
    </g>
+   <g id="line2d_1">
+    <path d="M 153.783666 239.597999 
+" clip-path="url(#p2eec05b733)" style="fill: none; stroke: #ffffff; stroke-width: 1.5; stroke-linecap: square"/>
+    <defs>
+     <path id="m5f0de68f2f" d="M 0 2.5 
+C 0.663008 2.5 1.29895 2.236584 1.767767 1.767767 
+C 2.236584 1.29895 2.5 0.663008 2.5 0 
+C 2.5 -0.663008 2.236584 -1.29895 1.767767 -1.767767 
+C 1.29895 -2.236584 0.663008 -2.5 0 -2.5 
+C -0.663008 -2.5 -1.29895 -2.236584 -1.767767 -1.767767 
+C -2.236584 -1.29895 -2.5 -0.663008 -2.5 0 
+C -2.5 0.663008 -2.236584 1.29895 -1.767767 1.767767 
+C -1.29895 2.236584 -0.663008 2.5 0 2.5 
+z
+" style="stroke: #1a252f; stroke-width: 0.8"/>
+    </defs>
+    <g clip-path="url(#p2eec05b733)">
+     <use xlink:href="#m5f0de68f2f" x="153.783666" y="239.597999" style="fill: #ffffff; stroke: #1a252f; stroke-width: 0.8"/>
+    </g>
+   </g>
+   <g id="text_2">
+    <g clip-path="url(#p2eec05b733)">
+     <!-- Manama -->
+     <g style="fill: #ffffff" transform="translate(174.038257 241.546241) scale(0.075 -0.075)">
+      <defs>
+       <path id="DejaVuSans-Bold-30" d="M 588 4666 
+L 2119 4666 
+L 3181 2169 
+L 4250 4666 
+L 5778 4666 
+L 5778 0 
+L 4641 0 
+L 4641 3413 
+L 3566 897 
+L 2803 897 
+L 1728 3413 
+L 1728 0 
+L 588 0 
+L 588 4666 
+z
+" transform="scale(0.015625)"/>
+       <path id="DejaVuSans-Bold-50" d="M 3781 2919 
+Q 3994 3244 4286 3414 
+Q 4578 3584 4928 3584 
+Q 5531 3584 5847 3212 
+Q 6163 2841 6163 2131 
+L 6163 0 
+L 5038 0 
+L 5038 1825 
+Q 5041 1866 5042 1909 
+Q 5044 1953 5044 2034 
+Q 5044 2406 4934 2573 
+Q 4825 2741 4581 2741 
+Q 4263 2741 4089 2478 
+Q 3916 2216 3909 1719 
+L 3909 0 
+L 2784 0 
+L 2784 1825 
+Q 2784 2406 2684 2573 
+Q 2584 2741 2328 2741 
+Q 2006 2741 1831 2477 
+Q 1656 2213 1656 1722 
+L 1656 0 
+L 531 0 
+L 531 3500 
+L 1656 3500 
+L 1656 2988 
+Q 1863 3284 2130 3434 
+Q 2397 3584 2719 3584 
+Q 3081 3584 3359 3409 
+Q 3638 3234 3781 2919 
+z
+" transform="scale(0.015625)"/>
+      </defs>
+      <use xlink:href="#DejaVuSans-Bold-30"/>
+      <use xlink:href="#DejaVuSans-Bold-44" transform="translate(99.515625 0)"/>
+      <use xlink:href="#DejaVuSans-Bold-51" transform="translate(167 0)"/>
+      <use xlink:href="#DejaVuSans-Bold-44" transform="translate(238.1875 0)"/>
+      <use xlink:href="#DejaVuSans-Bold-50" transform="translate(305.671875 0)"/>
+      <use xlink:href="#DejaVuSans-Bold-44" transform="translate(409.875 0)"/>
+     </g>
+    </g>
+   </g>
    <g id="legend_1">
     <g id="patch_2">
      <path d="M 13.5 498.657344 
@@ -258,7 +341,7 @@ L 15.3 473.094531
 z
 " style="fill: #e74c3c; stroke: #888888; stroke-linejoin: miter"/>
     </g>
-    <g id="text_2">
+    <g id="text_3">
      <!-- Bahrain -->
      <g transform="translate(40.5 479.394531) scale(0.09 -0.09)">
       <defs>
@@ -413,7 +496,7 @@ L 15.3 486.595234
 z
 " style="fill: #bdc3c7; stroke: #888888; stroke-linejoin: miter"/>
     </g>
-    <g id="text_3">
+    <g id="text_4">
      <!-- Neighbors -->
      <g transform="translate(40.5 492.895234) scale(0.09 -0.09)">
       <defs>
@@ -583,7 +666,7 @@ z
   </g>
  </g>
  <defs>
-  <clipPath id="p69b14f6965">
+  <clipPath id="p2eec05b733">
    <rect x="7.2" y="30.117344" width="375.03759" height="473.04"/>
   </clipPath>
  </defs>

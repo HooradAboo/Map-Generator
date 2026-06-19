@@ -6,7 +6,7 @@
   <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
    <cc:Work>
     <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
-    <dc:date>2026-06-19T08:14:02.229599</dc:date>
+    <dc:date>2026-06-19T08:36:18.726717</dc:date>
     <dc:format>image/svg+xml</dc:format>
     <dc:creator>
      <cc:Agent>
@@ -680,7 +680,7 @@ L -26.289256 93.796259
 L -27.775695 92.509891 
 L -27.527955 89.2355 
 z
-" clip-path="url(#pef40c387e1)" style="fill: #bdc3c7; stroke: #ffffff; stroke-width: 0.5"/>
+" clip-path="url(#pdfd8303729)" style="fill: #bdc3c7; stroke: #ffffff; stroke-width: 0.5"/>
     <path d="M -4.488162 189.572205 
 L -4.488162 189.104435 
 L -2.010765 188.519722 
@@ -725,7 +725,7 @@ L 10.62396 193.548252
 L 8.394302 192.378826 
 L 2.448549 191.560229 
 z
-" clip-path="url(#pef40c387e1)" style="fill: #bdc3c7; stroke: #ffffff; stroke-width: 0.5"/>
+" clip-path="url(#pdfd8303729)" style="fill: #bdc3c7; stroke: #ffffff; stroke-width: 0.5"/>
     <path d="M -151.150067 -39.635187 
 L -150.654588 -40.921555 
 L -149.415889 -42.207923 
@@ -2348,7 +2348,7 @@ L -149.16815 -35.19137
 L -150.159108 -36.828566 
 L -150.902327 -38.231877 
 z
-" clip-path="url(#pef40c387e1)" style="fill: #bdc3c7; stroke: #ffffff; stroke-width: 0.5"/>
+" clip-path="url(#pdfd8303729)" style="fill: #bdc3c7; stroke: #ffffff; stroke-width: 0.5"/>
     <path d="M 293.542702 264.064608 
 L 295.27688 261.959642 
 L 295.772359 261.842699 
@@ -3914,7 +3914,7 @@ L 297.258797 264.298493
 L 295.524619 264.298493 
 L 294.7814 264.18155 
 z
-" clip-path="url(#pef40c387e1)" style="fill: #bdc3c7; stroke: #ffffff; stroke-width: 0.5"/>
+" clip-path="url(#pdfd8303729)" style="fill: #bdc3c7; stroke: #ffffff; stroke-width: 0.5"/>
     <path d="M 661.188422 359.255841 
 L 661.683902 358.320301 
 L 662.9226 357.150875 
@@ -3936,11 +3936,11 @@ L 672.088969 361.126922
 L 669.116093 360.425267 
 L 662.179381 359.840554 
 z
-" clip-path="url(#pef40c387e1)" style="fill: #bdc3c7; stroke: #ffffff; stroke-width: 0.5"/>
+" clip-path="url(#pdfd8303729)" style="fill: #bdc3c7; stroke: #ffffff; stroke-width: 0.5"/>
    </g>
    <g id="PatchCollection_2">
     <defs>
-     <path id="mf310ebf8be" d="M 97.085116 -275.762258 
+     <path id="m99990ef0c8" d="M 97.085116 -275.762258 
 L 99.314774 -276.814741 
 L 99.810253 -277.165568 
 L 99.562513 -278.919707 
@@ -4634,8 +4634,8 @@ L 98.819294 -273.306464
 z
 " style="stroke: #ffffff; stroke-width: 0.6"/>
     </defs>
-    <g clip-path="url(#pef40c387e1)">
-     <use xlink:href="#mf310ebf8be" x="0" y="510.357344" style="fill: #e74c3c; stroke: #ffffff; stroke-width: 0.6"/>
+    <g clip-path="url(#pdfd8303729)">
+     <use xlink:href="#m99990ef0c8" x="0" y="510.357344" style="fill: #e74c3c; stroke: #ffffff; stroke-width: 0.6"/>
     </g>
    </g>
    <g id="text_1">
@@ -4650,9 +4650,9 @@ Q 42.158548 122.984738 42.158548 124.384738
 L 42.158548 131.385285 
 Q 42.158548 132.785285 43.558548 132.785285 
 z
-" clip-path="url(#pef40c387e1)" style="fill: #ffffff; opacity: 0.6"/>
+" clip-path="url(#pdfd8303729)" style="fill: #ffffff; opacity: 0.6"/>
     </g>
-    <g clip-path="url(#pef40c387e1)">
+    <g clip-path="url(#pdfd8303729)">
      <!-- Sierra Leone -->
      <g style="fill: #1a252f" transform="translate(43.558548 129.703644) scale(0.07 -0.07)">
       <defs>
@@ -4884,6 +4884,69 @@ z
      <use xlink:href="#DejaVuSans-Bold-44" transform="translate(321 0)"/>
     </g>
    </g>
+   <g id="line2d_1">
+    <path d="M 165.56483 285.750911 
+" clip-path="url(#pdfd8303729)" style="fill: none; stroke: #ffffff; stroke-width: 1.5; stroke-linecap: square"/>
+    <defs>
+     <path id="m0552dfda01" d="M 0 2.5 
+C 0.663008 2.5 1.29895 2.236584 1.767767 1.767767 
+C 2.236584 1.29895 2.5 0.663008 2.5 0 
+C 2.5 -0.663008 2.236584 -1.29895 1.767767 -1.767767 
+C 1.29895 -2.236584 0.663008 -2.5 0 -2.5 
+C -0.663008 -2.5 -1.29895 -2.236584 -1.767767 -1.767767 
+C -2.236584 -1.29895 -2.5 -0.663008 -2.5 0 
+C -2.5 0.663008 -2.236584 1.29895 -1.767767 1.767767 
+C -1.29895 2.236584 -0.663008 2.5 0 2.5 
+z
+" style="stroke: #1a252f; stroke-width: 0.8"/>
+    </defs>
+    <g clip-path="url(#pdfd8303729)">
+     <use xlink:href="#m0552dfda01" x="165.56483" y="285.750911" style="fill: #ffffff; stroke: #1a252f; stroke-width: 0.8"/>
+    </g>
+   </g>
+   <g id="text_3">
+    <g clip-path="url(#pdfd8303729)">
+     <!-- Monrovia -->
+     <g style="fill: #ffffff" transform="translate(176.667904 287.699446) scale(0.075 -0.075)">
+      <defs>
+       <path id="DejaVuSans-Bold-30" d="M 588 4666 
+L 2119 4666 
+L 3181 2169 
+L 4250 4666 
+L 5778 4666 
+L 5778 0 
+L 4641 0 
+L 4641 3413 
+L 3566 897 
+L 2803 897 
+L 1728 3413 
+L 1728 0 
+L 588 0 
+L 588 4666 
+z
+" transform="scale(0.015625)"/>
+       <path id="DejaVuSans-Bold-59" d="M 97 3500 
+L 1216 3500 
+L 2088 1081 
+L 2956 3500 
+L 4078 3500 
+L 2700 0 
+L 1472 0 
+L 97 3500 
+z
+" transform="scale(0.015625)"/>
+      </defs>
+      <use xlink:href="#DejaVuSans-Bold-30"/>
+      <use xlink:href="#DejaVuSans-Bold-52" transform="translate(99.515625 0)"/>
+      <use xlink:href="#DejaVuSans-Bold-51" transform="translate(168.21875 0)"/>
+      <use xlink:href="#DejaVuSans-Bold-55" transform="translate(239.40625 0)"/>
+      <use xlink:href="#DejaVuSans-Bold-52" transform="translate(288.71875 0)"/>
+      <use xlink:href="#DejaVuSans-Bold-59" transform="translate(357.421875 0)"/>
+      <use xlink:href="#DejaVuSans-Bold-4c" transform="translate(422.609375 0)"/>
+      <use xlink:href="#DejaVuSans-Bold-44" transform="translate(456.890625 0)"/>
+     </g>
+    </g>
+   </g>
    <g id="legend_1">
     <g id="patch_3">
      <path d="M 13.5 498.657344 
@@ -4906,7 +4969,7 @@ L 15.3 473.094531
 z
 " style="fill: #e74c3c; stroke: #888888; stroke-linejoin: miter"/>
     </g>
-    <g id="text_3">
+    <g id="text_4">
      <!-- Liberia -->
      <g transform="translate(40.5 479.394531) scale(0.09 -0.09)">
       <defs>
@@ -5051,7 +5114,7 @@ L 15.3 486.595234
 z
 " style="fill: #bdc3c7; stroke: #888888; stroke-linejoin: miter"/>
     </g>
-    <g id="text_4">
+    <g id="text_5">
      <!-- Neighbors -->
      <g transform="translate(40.5 492.895234) scale(0.09 -0.09)">
       <defs>
@@ -5189,7 +5252,7 @@ z
   </g>
  </g>
  <defs>
-  <clipPath id="pef40c387e1">
+  <clipPath id="pdfd8303729">
    <rect x="7.2" y="30.117344" width="461.202536" height="473.04"/>
   </clipPath>
  </defs>

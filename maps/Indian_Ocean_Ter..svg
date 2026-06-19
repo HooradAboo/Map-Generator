@@ -6,7 +6,7 @@
   <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
    <cc:Work>
     <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
-    <dc:date>2026-06-19T08:14:17.565088</dc:date>
+    <dc:date>2026-06-19T08:36:34.808667</dc:date>
     <dc:format>image/svg+xml</dc:format>
     <dc:creator>
      <cc:Agent>
@@ -58,7 +58,7 @@ L 730.764604 164.574744
 L 729.300204 164.691491 
 L 727.835805 165.041734 
 z
-" clip-path="url(#pd9afcda0fe)" style="fill: #e74c3c; stroke: #ffffff; stroke-width: 0.6"/>
+" clip-path="url(#p9f7879619c)" style="fill: #e74c3c; stroke: #ffffff; stroke-width: 0.6"/>
     <path d="M 133.777799 276.4188 
 L 134.265932 276.4188 
 L 134.265932 277.119285 
@@ -73,7 +73,7 @@ L 135.486265 281.322193
 L 134.509999 280.037971 
 L 134.021866 278.053264 
 z
-" clip-path="url(#pd9afcda0fe)" style="fill: #e74c3c; stroke: #ffffff; stroke-width: 0.6"/>
+" clip-path="url(#p9f7879619c)" style="fill: #e74c3c; stroke: #ffffff; stroke-width: 0.6"/>
     <path d="M 138.415064 280.971951 
 L 138.415064 280.621708 
 L 139.147263 280.621708 
@@ -86,7 +86,7 @@ L 140.12353 281.088698
 L 139.39133 281.43894 
 L 138.65913 281.205446 
 z
-" clip-path="url(#pd9afcda0fe)" style="fill: #e74c3c; stroke: #ffffff; stroke-width: 0.6"/>
+" clip-path="url(#p9f7879619c)" style="fill: #e74c3c; stroke: #ffffff; stroke-width: 0.6"/>
    </g>
    <g id="text_1">
     <!-- Indian Ocean Ter. -->
@@ -735,7 +735,7 @@ z
   </g>
  </g>
  <defs>
-  <clipPath id="pd9afcda0fe">
+  <clipPath id="p9f7879619c">
    <rect x="7.2" y="30.117344" width="856" height="380.408614"/>
   </clipPath>
  </defs>

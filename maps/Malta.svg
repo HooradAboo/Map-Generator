@@ -6,7 +6,7 @@
   <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
    <cc:Work>
     <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
-    <dc:date>2026-06-19T08:14:17.140482</dc:date>
+    <dc:date>2026-06-19T08:36:34.320662</dc:date>
     <dc:format>image/svg+xml</dc:format>
     <dc:creator>
      <cc:Agent>
@@ -68,7 +68,7 @@ L 203.612134 273.137976
 L 202.209491 264.605896 
 L 201.50817 260.94929 
 z
-" clip-path="url(#pc4526ee6aa)" style="fill: #e74c3c; stroke: #ffffff; stroke-width: 0.6"/>
+" clip-path="url(#pbb5bd1468d)" style="fill: #e74c3c; stroke: #ffffff; stroke-width: 0.6"/>
     <path d="M 172.052661 236.165629 
 L 174.857948 235.35305 
 L 186.780415 233.727891 
@@ -86,7 +86,7 @@ L 172.753983 243.47884
 L 173.455304 241.041103 
 L 172.753983 238.197076 
 z
-" clip-path="url(#pc4526ee6aa)" style="fill: #e74c3c; stroke: #ffffff; stroke-width: 0.6"/>
+" clip-path="url(#pbb5bd1468d)" style="fill: #e74c3c; stroke: #ffffff; stroke-width: 0.6"/>
    </g>
    <g id="text_1">
     <!-- Malta -->
@@ -177,6 +177,78 @@ z
      <use xlink:href="#DejaVuSans-Bold-44" transform="translate(249.078125 0)"/>
     </g>
    </g>
+   <g id="line2d_1">
+    <path d="M 194.973605 364.93809 
+" clip-path="url(#pbb5bd1468d)" style="fill: none; stroke: #ffffff; stroke-width: 1.5; stroke-linecap: square"/>
+    <defs>
+     <path id="m59da2d84a6" d="M 0 2.5 
+C 0.663008 2.5 1.29895 2.236584 1.767767 1.767767 
+C 2.236584 1.29895 2.5 0.663008 2.5 0 
+C 2.5 -0.663008 2.236584 -1.29895 1.767767 -1.767767 
+C 1.29895 -2.236584 0.663008 -2.5 0 -2.5 
+C -0.663008 -2.5 -1.29895 -2.236584 -1.767767 -1.767767 
+C -2.236584 -1.29895 -2.5 -0.663008 -2.5 0 
+C -2.5 0.663008 -2.236584 1.29895 -1.767767 1.767767 
+C -1.29895 2.236584 -0.663008 2.5 0 2.5 
+z
+" style="stroke: #1a252f; stroke-width: 0.8"/>
+    </defs>
+    <g clip-path="url(#pbb5bd1468d)">
+     <use xlink:href="#m59da2d84a6" x="194.973605" y="364.93809" style="fill: #ffffff; stroke: #1a252f; stroke-width: 0.8"/>
+    </g>
+   </g>
+   <g id="text_2">
+    <g clip-path="url(#pbb5bd1468d)">
+     <!-- Valletta -->
+     <g style="fill: #ffffff" transform="translate(215.580188 366.886625) scale(0.075 -0.075)">
+      <defs>
+       <path id="DejaVuSans-Bold-39" d="M 31 4666 
+L 1241 4666 
+L 2478 1222 
+L 3713 4666 
+L 4922 4666 
+L 3194 0 
+L 1759 0 
+L 31 4666 
+z
+" transform="scale(0.015625)"/>
+       <path id="DejaVuSans-Bold-48" d="M 4031 1759 
+L 4031 1441 
+L 1416 1441 
+Q 1456 1047 1700 850 
+Q 1944 653 2381 653 
+Q 2734 653 3104 758 
+Q 3475 863 3866 1075 
+L 3866 213 
+Q 3469 63 3072 -14 
+Q 2675 -91 2278 -91 
+Q 1328 -91 801 392 
+Q 275 875 275 1747 
+Q 275 2603 792 3093 
+Q 1309 3584 2216 3584 
+Q 3041 3584 3536 3087 
+Q 4031 2591 4031 1759 
+z
+M 2881 2131 
+Q 2881 2450 2695 2645 
+Q 2509 2841 2209 2841 
+Q 1884 2841 1681 2658 
+Q 1478 2475 1428 2131 
+L 2881 2131 
+z
+" transform="scale(0.015625)"/>
+      </defs>
+      <use xlink:href="#DejaVuSans-Bold-39"/>
+      <use xlink:href="#DejaVuSans-Bold-44" transform="translate(71.921875 0)"/>
+      <use xlink:href="#DejaVuSans-Bold-4f" transform="translate(139.40625 0)"/>
+      <use xlink:href="#DejaVuSans-Bold-4f" transform="translate(173.6875 0)"/>
+      <use xlink:href="#DejaVuSans-Bold-48" transform="translate(207.96875 0)"/>
+      <use xlink:href="#DejaVuSans-Bold-57" transform="translate(275.796875 0)"/>
+      <use xlink:href="#DejaVuSans-Bold-57" transform="translate(323.59375 0)"/>
+      <use xlink:href="#DejaVuSans-Bold-44" transform="translate(371.390625 0)"/>
+     </g>
+    </g>
+   </g>
    <g id="legend_1">
     <g id="patch_2">
      <path d="M 13.5 498.657344 
@@ -199,7 +271,7 @@ L 15.3 473.094531
 z
 " style="fill: #e74c3c; stroke: #888888; stroke-linejoin: miter"/>
     </g>
-    <g id="text_2">
+    <g id="text_3">
      <!-- Malta -->
      <g transform="translate(40.5 479.394531) scale(0.09 -0.09)">
       <defs>
@@ -296,7 +368,7 @@ L 15.3 486.595234
 z
 " style="fill: #bdc3c7; stroke: #888888; stroke-linejoin: miter"/>
     </g>
-    <g id="text_3">
+    <g id="text_4">
      <!-- Neighbors -->
      <g transform="translate(40.5 492.895234) scale(0.09 -0.09)">
       <defs>
@@ -515,7 +587,7 @@ z
   </g>
  </g>
  <defs>
-  <clipPath id="pc4526ee6aa">
+  <clipPath id="pbb5bd1468d">
    <rect x="7.2" y="30.117344" width="404.746736" height="473.04"/>
   </clipPath>
  </defs>

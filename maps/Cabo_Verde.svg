@@ -6,7 +6,7 @@
   <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
    <cc:Work>
     <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
-    <dc:date>2026-06-19T08:14:17.066127</dc:date>
+    <dc:date>2026-06-19T08:36:34.241619</dc:date>
     <dc:format>image/svg+xml</dc:format>
     <dc:creator>
      <cc:Agent>
@@ -124,7 +124,7 @@ L 272.20227 362.113888
 L 271.849394 361.769518 
 L 271.496519 361.252963 
 z
-" clip-path="url(#p9e249497b6)" style="fill: #e74c3c; stroke: #ffffff; stroke-width: 0.6"/>
+" clip-path="url(#p4f2bcf8491)" style="fill: #e74c3c; stroke: #ffffff; stroke-width: 0.6"/>
     <path d="M 117.290026 159.107855 
 L 117.642902 157.55819 
 L 120.113029 154.803232 
@@ -177,7 +177,7 @@ L 120.113029 161.518444
 L 118.348652 161.174074 
 L 117.995777 160.829704 
 z
-" clip-path="url(#p9e249497b6)" style="fill: #e74c3c; stroke: #ffffff; stroke-width: 0.6"/>
+" clip-path="url(#p4f2bcf8491)" style="fill: #e74c3c; stroke: #ffffff; stroke-width: 0.6"/>
     <path d="M 352.304956 261.385703 
 L 352.304956 259.491669 
 L 352.657831 257.597635 
@@ -223,7 +223,7 @@ L 357.598085 266.379066
 L 354.069332 264.657217 
 L 352.657831 263.624107 
 z
-" clip-path="url(#p9e249497b6)" style="fill: #e74c3c; stroke: #ffffff; stroke-width: 0.6"/>
+" clip-path="url(#p4f2bcf8491)" style="fill: #e74c3c; stroke: #ffffff; stroke-width: 0.6"/>
     <path d="M 323.369184 350.921867 
 L 323.722059 349.544388 
 L 324.427809 348.339093 
@@ -269,7 +269,7 @@ L 327.250812 355.054305
 L 325.13356 353.332456 
 L 324.074934 352.127162 
 z
-" clip-path="url(#p9e249497b6)" style="fill: #e74c3c; stroke: #ffffff; stroke-width: 0.6"/>
+" clip-path="url(#p4f2bcf8491)" style="fill: #e74c3c; stroke: #ffffff; stroke-width: 0.6"/>
     <path d="M 349.481953 186.657444 
 L 349.481953 183.558115 
 L 351.599205 182.008451 
@@ -313,7 +313,7 @@ L 351.599205 189.412403
 L 350.187704 189.068033 
 L 349.834829 188.034923 
 z
-" clip-path="url(#p9e249497b6)" style="fill: #e74c3c; stroke: #ffffff; stroke-width: 0.6"/>
+" clip-path="url(#p4f2bcf8491)" style="fill: #e74c3c; stroke: #ffffff; stroke-width: 0.6"/>
     <path d="M 208.331846 201.465348 
 L 209.390472 199.226944 
 L 215.036476 197.160724 
@@ -354,7 +354,7 @@ L 212.919224 206.114341
 L 210.449097 205.425601 
 L 209.037596 203.703752 
 z
-" clip-path="url(#p9e249497b6)" style="fill: #e74c3c; stroke: #ffffff; stroke-width: 0.6"/>
+" clip-path="url(#p4f2bcf8491)" style="fill: #e74c3c; stroke: #ffffff; stroke-width: 0.6"/>
     <path d="M 143.402796 182.525005 
 L 143.755672 180.286601 
 L 144.814297 178.564752 
@@ -394,7 +394,7 @@ L 145.872923 183.558115
 L 145.167173 182.869375 
 L 144.814297 181.836266 
 z
-" clip-path="url(#p9e249497b6)" style="fill: #e74c3c; stroke: #ffffff; stroke-width: 0.6"/>
+" clip-path="url(#p4f2bcf8491)" style="fill: #e74c3c; stroke: #ffffff; stroke-width: 0.6"/>
     <path d="M 199.157089 376.405237 
 L 199.509964 374.339018 
 L 200.921465 371.756244 
@@ -421,7 +421,7 @@ L 206.567469 385.186668
 L 200.921465 380.36549 
 L 199.509964 378.471456 
 z
-" clip-path="url(#p9e249497b6)" style="fill: #e74c3c; stroke: #ffffff; stroke-width: 0.6"/>
+" clip-path="url(#p4f2bcf8491)" style="fill: #e74c3c; stroke: #ffffff; stroke-width: 0.6"/>
     <path d="M 176.220196 385.875408 
 L 176.573072 384.842298 
 L 176.925947 383.981374 
@@ -445,7 +445,7 @@ L 179.396074 387.597257
 L 177.631697 386.391963 
 L 176.925947 385.186668 
 z
-" clip-path="url(#p9e249497b6)" style="fill: #e74c3c; stroke: #ffffff; stroke-width: 0.6"/>
+" clip-path="url(#p4f2bcf8491)" style="fill: #e74c3c; stroke: #ffffff; stroke-width: 0.6"/>
    </g>
    <g id="text_1">
     <!-- Cabo Verde -->
@@ -644,6 +644,74 @@ z
      <use xlink:href="#DejaVuSans-Bold-48" transform="translate(576.609375 0)"/>
     </g>
    </g>
+   <g id="line2d_1">
+    <path d="M 318.275341 414.562869 
+" clip-path="url(#p4f2bcf8491)" style="fill: none; stroke: #ffffff; stroke-width: 1.5; stroke-linecap: square"/>
+    <defs>
+     <path id="m509cb3e1d7" d="M 0 2.5 
+C 0.663008 2.5 1.29895 2.236584 1.767767 1.767767 
+C 2.236584 1.29895 2.5 0.663008 2.5 0 
+C 2.5 -0.663008 2.236584 -1.29895 1.767767 -1.767767 
+C 1.29895 -2.236584 0.663008 -2.5 0 -2.5 
+C -0.663008 -2.5 -1.29895 -2.236584 -1.767767 -1.767767 
+C -2.236584 -1.29895 -2.5 -0.663008 -2.5 0 
+C -2.5 0.663008 -2.236584 1.29895 -1.767767 1.767767 
+C -1.29895 2.236584 -0.663008 2.5 0 2.5 
+z
+" style="stroke: #1a252f; stroke-width: 0.8"/>
+    </defs>
+    <g clip-path="url(#p4f2bcf8491)">
+     <use xlink:href="#m509cb3e1d7" x="318.275341" y="414.562869" style="fill: #ffffff; stroke: #1a252f; stroke-width: 0.8"/>
+    </g>
+   </g>
+   <g id="text_2">
+    <g clip-path="url(#p4f2bcf8491)">
+     <!-- Praia -->
+     <g style="fill: #ffffff" transform="translate(332.036594 416.511405) scale(0.075 -0.075)">
+      <defs>
+       <path id="DejaVuSans-Bold-33" d="M 588 4666 
+L 2584 4666 
+Q 3475 4666 3951 4270 
+Q 4428 3875 4428 3144 
+Q 4428 2409 3951 2014 
+Q 3475 1619 2584 1619 
+L 1791 1619 
+L 1791 0 
+L 588 0 
+L 588 4666 
+z
+M 1791 3794 
+L 1791 2491 
+L 2456 2491 
+Q 2806 2491 2997 2661 
+Q 3188 2831 3188 3144 
+Q 3188 3456 2997 3625 
+Q 2806 3794 2456 3794 
+L 1791 3794 
+z
+" transform="scale(0.015625)"/>
+       <path id="DejaVuSans-Bold-4c" d="M 538 3500 
+L 1656 3500 
+L 1656 0 
+L 538 0 
+L 538 3500 
+z
+M 538 4863 
+L 1656 4863 
+L 1656 3950 
+L 538 3950 
+L 538 4863 
+z
+" transform="scale(0.015625)"/>
+      </defs>
+      <use xlink:href="#DejaVuSans-Bold-33"/>
+      <use xlink:href="#DejaVuSans-Bold-55" transform="translate(73.296875 0)"/>
+      <use xlink:href="#DejaVuSans-Bold-44" transform="translate(122.609375 0)"/>
+      <use xlink:href="#DejaVuSans-Bold-4c" transform="translate(190.09375 0)"/>
+      <use xlink:href="#DejaVuSans-Bold-44" transform="translate(224.375 0)"/>
+     </g>
+    </g>
+   </g>
    <g id="legend_1">
     <g id="patch_2">
      <path d="M 13.5 498.657344 
@@ -666,7 +734,7 @@ L 15.3 473.094531
 z
 " style="fill: #e74c3c; stroke: #888888; stroke-linejoin: miter"/>
     </g>
-    <g id="text_2">
+    <g id="text_3">
      <!-- Cabo Verde -->
      <g transform="translate(40.5 479.394531) scale(0.09 -0.09)">
       <defs>
@@ -871,7 +939,7 @@ L 15.3 486.595234
 z
 " style="fill: #bdc3c7; stroke: #888888; stroke-linejoin: miter"/>
     </g>
-    <g id="text_3">
+    <g id="text_4">
      <!-- Neighbors -->
      <g transform="translate(40.5 492.895234) scale(0.09 -0.09)">
       <defs>
@@ -1001,7 +1069,7 @@ z
   </g>
  </g>
  <defs>
-  <clipPath id="p9e249497b6">
+  <clipPath id="p4f2bcf8491">
    <rect x="7.2" y="30.117344" width="484.130754" height="473.04"/>
   </clipPath>
  </defs>

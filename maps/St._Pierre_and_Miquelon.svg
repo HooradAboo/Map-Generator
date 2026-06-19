@@ -6,7 +6,7 @@
   <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
    <cc:Work>
     <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
-    <dc:date>2026-06-19T08:14:14.286417</dc:date>
+    <dc:date>2026-06-19T08:36:31.436575</dc:date>
     <dc:format>image/svg+xml</dc:format>
     <dc:creator>
      <cc:Agent>
@@ -94,7 +94,7 @@ L 141.893084 298.486895
 L 141.893084 296.568248 
 L 139.100541 294.265871 
 z
-" clip-path="url(#p2ccc853989)" style="fill: #e74c3c; stroke: #ffffff; stroke-width: 0.6"/>
+" clip-path="url(#p133f871975)" style="fill: #e74c3c; stroke: #ffffff; stroke-width: 0.6"/>
     <path d="M 162.557904 307.696404 
 L 165.908955 302.70792 
 L 167.584481 300.405543 
@@ -113,7 +113,7 @@ L 173.728076 309.615052
 L 169.818516 310.766241 
 L 165.350447 310.382511 
 z
-" clip-path="url(#p2ccc853989)" style="fill: #e74c3c; stroke: #ffffff; stroke-width: 0.6"/>
+" clip-path="url(#p133f871975)" style="fill: #e74c3c; stroke: #ffffff; stroke-width: 0.6"/>
    </g>
    <g id="text_1">
     <!-- St. Pierre and Miquelon -->
@@ -455,6 +455,54 @@ z
      <use xlink:href="#DejaVuSans-Bold-51" transform="translate(1261.71875 0)"/>
     </g>
    </g>
+   <g id="line2d_1">
+    <path d="M 182.968462 377.167826 
+" clip-path="url(#p133f871975)" style="fill: none; stroke: #ffffff; stroke-width: 1.5; stroke-linecap: square"/>
+    <defs>
+     <path id="m6eb0e1abc9" d="M 0 2.5 
+C 0.663008 2.5 1.29895 2.236584 1.767767 1.767767 
+C 2.236584 1.29895 2.5 0.663008 2.5 0 
+C 2.5 -0.663008 2.236584 -1.29895 1.767767 -1.767767 
+C 1.29895 -2.236584 0.663008 -2.5 0 -2.5 
+C -0.663008 -2.5 -1.29895 -2.236584 -1.767767 -1.767767 
+C -2.236584 -1.29895 -2.5 -0.663008 -2.5 0 
+C -2.5 0.663008 -2.236584 1.29895 -1.767767 1.767767 
+C -1.29895 2.236584 -0.663008 2.5 0 2.5 
+z
+" style="stroke: #1a252f; stroke-width: 0.8"/>
+    </defs>
+    <g clip-path="url(#p133f871975)">
+     <use xlink:href="#m6eb0e1abc9" x="182.968462" y="377.167826" style="fill: #ffffff; stroke: #1a252f; stroke-width: 0.8"/>
+    </g>
+   </g>
+   <g id="text_2">
+    <g clip-path="url(#p133f871975)">
+     <!-- Saint-Pierre -->
+     <g style="fill: #ffffff" transform="translate(199.068869 379.116361) scale(0.075 -0.075)">
+      <defs>
+       <path id="DejaVuSans-Bold-10" d="M 347 2297 
+L 2309 2297 
+L 2309 1388 
+L 347 1388 
+L 347 2297 
+z
+" transform="scale(0.015625)"/>
+      </defs>
+      <use xlink:href="#DejaVuSans-Bold-36"/>
+      <use xlink:href="#DejaVuSans-Bold-44" transform="translate(72.015625 0)"/>
+      <use xlink:href="#DejaVuSans-Bold-4c" transform="translate(139.5 0)"/>
+      <use xlink:href="#DejaVuSans-Bold-51" transform="translate(173.78125 0)"/>
+      <use xlink:href="#DejaVuSans-Bold-57" transform="translate(244.96875 0)"/>
+      <use xlink:href="#DejaVuSans-Bold-10" transform="translate(292.765625 0)"/>
+      <use xlink:href="#DejaVuSans-Bold-33" transform="translate(334.265625 0)"/>
+      <use xlink:href="#DejaVuSans-Bold-4c" transform="translate(407.5625 0)"/>
+      <use xlink:href="#DejaVuSans-Bold-48" transform="translate(441.84375 0)"/>
+      <use xlink:href="#DejaVuSans-Bold-55" transform="translate(509.671875 0)"/>
+      <use xlink:href="#DejaVuSans-Bold-55" transform="translate(558.984375 0)"/>
+      <use xlink:href="#DejaVuSans-Bold-48" transform="translate(608.296875 0)"/>
+     </g>
+    </g>
+   </g>
    <g id="legend_1">
     <g id="patch_2">
      <path d="M 13.5 498.657344 
@@ -477,7 +525,7 @@ L 15.3 473.094531
 z
 " style="fill: #e74c3c; stroke: #888888; stroke-linejoin: miter"/>
     </g>
-    <g id="text_2">
+    <g id="text_3">
      <!-- St. Pierre and Miquelon -->
      <g transform="translate(40.5 479.394531) scale(0.09 -0.09)">
       <defs>
@@ -821,7 +869,7 @@ L 15.3 486.595234
 z
 " style="fill: #bdc3c7; stroke: #888888; stroke-linejoin: miter"/>
     </g>
-    <g id="text_3">
+    <g id="text_4">
      <!-- Neighbors -->
      <g transform="translate(40.5 492.895234) scale(0.09 -0.09)">
       <defs>
@@ -964,7 +1012,7 @@ z
   </g>
  </g>
  <defs>
-  <clipPath id="p2ccc853989">
+  <clipPath id="p133f871975">
    <rect x="7.2" y="30.117344" width="301.779669" height="473.04"/>
   </clipPath>
  </defs>

@@ -6,7 +6,7 @@
   <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
    <cc:Work>
     <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
-    <dc:date>2026-06-19T08:14:13.991733</dc:date>
+    <dc:date>2026-06-19T08:36:31.129647</dc:date>
     <dc:format>image/svg+xml</dc:format>
     <dc:creator>
      <cc:Agent>
@@ -84,7 +84,7 @@ L 198.46346 239.842917
 L 197.242655 241.074845 
 L 194.801046 241.998791 
 z
-" clip-path="url(#p6ce2d8aa0c)" style="fill: #e74c3c; stroke: #ffffff; stroke-width: 0.6"/>
+" clip-path="url(#p15be793cf3)" style="fill: #e74c3c; stroke: #ffffff; stroke-width: 0.6"/>
     <path d="M 246.07484 209.352708 
 L 246.685242 207.812799 
 L 247.906047 206.888853 
@@ -122,7 +122,7 @@ L 247.295645 213.972437
 L 247.906047 212.124545 
 L 247.906047 210.584636 
 z
-" clip-path="url(#p6ce2d8aa0c)" style="fill: #e74c3c; stroke: #ffffff; stroke-width: 0.6"/>
+" clip-path="url(#p15be793cf3)" style="fill: #e74c3c; stroke: #ffffff; stroke-width: 0.6"/>
     <path d="M 277.205358 224.443822 
 L 278.426162 224.443822 
 L 280.257369 224.751804 
@@ -158,7 +158,7 @@ L 279.646967 236.147135
 L 278.426162 233.067315 
 L 277.81576 231.219424 
 z
-" clip-path="url(#p6ce2d8aa0c)" style="fill: #e74c3c; stroke: #ffffff; stroke-width: 0.6"/>
+" clip-path="url(#p15be793cf3)" style="fill: #e74c3c; stroke: #ffffff; stroke-width: 0.6"/>
     <path d="M 321.154324 242.922737 
 L 322.375129 242.614755 
 L 322.985531 242.306773 
@@ -177,7 +177,7 @@ L 335.193577 251.854212
 L 332.141566 249.698339 
 L 324.206336 246.310538 
 z
-" clip-path="url(#p6ce2d8aa0c)" style="fill: #e74c3c; stroke: #ffffff; stroke-width: 0.6"/>
+" clip-path="url(#p15be793cf3)" style="fill: #e74c3c; stroke: #ffffff; stroke-width: 0.6"/>
     <path d="M 330.310359 289.428005 
 L 330.310359 286.348186 
 L 332.141566 284.808277 
@@ -192,7 +192,7 @@ L 337.635187 287.888096
 L 335.80398 290.351951 
 L 333.36237 291.275897 
 z
-" clip-path="url(#p6ce2d8aa0c)" style="fill: #e74c3c; stroke: #ffffff; stroke-width: 0.6"/>
+" clip-path="url(#p15be793cf3)" style="fill: #e74c3c; stroke: #ffffff; stroke-width: 0.6"/>
     <path d="M 170.384954 265.713398 
 L 170.384954 264.48147 
 L 172.216161 262.633579 
@@ -203,7 +203,7 @@ L 178.320184 251.238248
 L 178.320184 256.473941 
 L 175.268172 262.941561 
 z
-" clip-path="url(#p6ce2d8aa0c)" style="fill: #e74c3c; stroke: #ffffff; stroke-width: 0.6"/>
+" clip-path="url(#p15be793cf3)" style="fill: #e74c3c; stroke: #ffffff; stroke-width: 0.6"/>
     <path d="M 395.623406 298.359481 
 L 396.233808 294.355716 
 L 396.844211 290.351951 
@@ -213,7 +213,7 @@ L 399.896222 294.355716
 L 398.675418 298.975444 
 L 396.844211 301.747282 
 z
-" clip-path="url(#p6ce2d8aa0c)" style="fill: #e74c3c; stroke: #ffffff; stroke-width: 0.6"/>
+" clip-path="url(#p15be793cf3)" style="fill: #e74c3c; stroke: #ffffff; stroke-width: 0.6"/>
     <path d="M 384.636164 323.306015 
 L 385.246567 319.918214 
 L 385.856969 318.378305 
@@ -222,7 +222,7 @@ L 388.908981 319.302251
 L 387.688176 321.766106 
 L 385.246567 323.921979 
 z
-" clip-path="url(#p6ce2d8aa0c)" style="fill: #e74c3c; stroke: #ffffff; stroke-width: 0.6"/>
+" clip-path="url(#p15be793cf3)" style="fill: #e74c3c; stroke: #ffffff; stroke-width: 0.6"/>
     <path d="M 234.477196 221.671985 
 L 235.698001 219.516111 
 L 236.918805 218.900147 
@@ -231,7 +231,7 @@ L 237.529208 221.364003
 L 236.308403 222.287948 
 L 235.087598 222.903912 
 z
-" clip-path="url(#p6ce2d8aa0c)" style="fill: #e74c3c; stroke: #ffffff; stroke-width: 0.6"/>
+" clip-path="url(#p15be793cf3)" style="fill: #e74c3c; stroke: #ffffff; stroke-width: 0.6"/>
     <path d="M 302.842255 327.30978 
 L 304.673462 325.769871 
 L 305.894266 325.153907 
@@ -239,21 +239,21 @@ L 307.115071 324.537943
 L 306.504669 326.077853 
 L 303.452657 327.617762 
 z
-" clip-path="url(#p6ce2d8aa0c)" style="fill: #e74c3c; stroke: #ffffff; stroke-width: 0.6"/>
+" clip-path="url(#p15be793cf3)" style="fill: #e74c3c; stroke: #ffffff; stroke-width: 0.6"/>
     <path d="M 312.608692 325.153907 
 L 313.829496 322.38207 
 L 315.050301 321.458124 
 L 315.050301 323.921979 
 L 313.829496 326.693816 
 z
-" clip-path="url(#p6ce2d8aa0c)" style="fill: #e74c3c; stroke: #ffffff; stroke-width: 0.6"/>
+" clip-path="url(#p15be793cf3)" style="fill: #e74c3c; stroke: #ffffff; stroke-width: 0.6"/>
     <path d="M 229.593978 225.983731 
 L 230.814782 224.751804 
 L 232.035587 224.13584 
 L 232.035587 224.751804 
 L 230.814782 225.983731 
 z
-" clip-path="url(#p6ce2d8aa0c)" style="fill: #e74c3c; stroke: #ffffff; stroke-width: 0.6"/>
+" clip-path="url(#p15be793cf3)" style="fill: #e74c3c; stroke: #ffffff; stroke-width: 0.6"/>
    </g>
    <g id="text_1">
     <!-- Turks and Caicos Is. -->
@@ -550,6 +550,70 @@ z
      <use xlink:href="#DejaVuSans-Bold-11" transform="translate(1077.8125 0)"/>
     </g>
    </g>
+   <g id="line2d_1">
+    <path d="M 407.985884 329.467078 
+" clip-path="url(#p15be793cf3)" style="fill: none; stroke: #ffffff; stroke-width: 1.5; stroke-linecap: square"/>
+    <defs>
+     <path id="m3bdfa208d0" d="M 0 2.5 
+C 0.663008 2.5 1.29895 2.236584 1.767767 1.767767 
+C 2.236584 1.29895 2.5 0.663008 2.5 0 
+C 2.5 -0.663008 2.236584 -1.29895 1.767767 -1.767767 
+C 1.29895 -2.236584 0.663008 -2.5 0 -2.5 
+C -0.663008 -2.5 -1.29895 -2.236584 -1.767767 -1.767767 
+C -2.236584 -1.29895 -2.5 -0.663008 -2.5 0 
+C -2.5 0.663008 -2.236584 1.29895 -1.767767 1.767767 
+C -1.29895 2.236584 -0.663008 2.5 0 2.5 
+z
+" style="stroke: #1a252f; stroke-width: 0.8"/>
+    </defs>
+    <g clip-path="url(#p15be793cf3)">
+     <use xlink:href="#m3bdfa208d0" x="407.985884" y="329.467078" style="fill: #ffffff; stroke: #1a252f; stroke-width: 0.8"/>
+    </g>
+   </g>
+   <g id="text_2">
+    <g clip-path="url(#p15be793cf3)">
+     <!-- Grand Turk -->
+     <g style="fill: #ffffff" transform="translate(428.384003 331.415613) scale(0.075 -0.075)">
+      <defs>
+       <path id="DejaVuSans-Bold-2a" d="M 4781 347 
+Q 4331 128 3847 18 
+Q 3363 -91 2847 -91 
+Q 1681 -91 1000 561 
+Q 319 1213 319 2328 
+Q 319 3456 1012 4103 
+Q 1706 4750 2913 4750 
+Q 3378 4750 3804 4662 
+Q 4231 4575 4609 4403 
+L 4609 3438 
+Q 4219 3659 3833 3768 
+Q 3447 3878 3059 3878 
+Q 2341 3878 1952 3476 
+Q 1563 3075 1563 2328 
+Q 1563 1588 1938 1184 
+Q 2313 781 3003 781 
+Q 3191 781 3352 804 
+Q 3513 828 3641 878 
+L 3641 1784 
+L 2906 1784 
+L 2906 2591 
+L 4781 2591 
+L 4781 347 
+z
+" transform="scale(0.015625)"/>
+      </defs>
+      <use xlink:href="#DejaVuSans-Bold-2a"/>
+      <use xlink:href="#DejaVuSans-Bold-55" transform="translate(82.078125 0)"/>
+      <use xlink:href="#DejaVuSans-Bold-44" transform="translate(131.390625 0)"/>
+      <use xlink:href="#DejaVuSans-Bold-51" transform="translate(198.875 0)"/>
+      <use xlink:href="#DejaVuSans-Bold-47" transform="translate(270.0625 0)"/>
+      <use xlink:href="#DejaVuSans-Bold-3" transform="translate(341.640625 0)"/>
+      <use xlink:href="#DejaVuSans-Bold-37" transform="translate(376.453125 0)"/>
+      <use xlink:href="#DejaVuSans-Bold-58" transform="translate(433.6875 0)"/>
+      <use xlink:href="#DejaVuSans-Bold-55" transform="translate(504.875 0)"/>
+      <use xlink:href="#DejaVuSans-Bold-4e" transform="translate(554.1875 0)"/>
+     </g>
+    </g>
+   </g>
    <g id="legend_1">
     <g id="patch_2">
      <path d="M 13.5 498.657344 
@@ -572,7 +636,7 @@ L 15.3 473.094531
 z
 " style="fill: #e74c3c; stroke: #888888; stroke-linejoin: miter"/>
     </g>
-    <g id="text_2">
+    <g id="text_3">
      <!-- Turks and Caicos Is. -->
      <g transform="translate(40.5 479.394531) scale(0.09 -0.09)">
       <defs>
@@ -871,7 +935,7 @@ L 15.3 486.595234
 z
 " style="fill: #bdc3c7; stroke: #888888; stroke-linejoin: miter"/>
     </g>
-    <g id="text_3">
+    <g id="text_4">
      <!-- Neighbors -->
      <g transform="translate(40.5 492.895234) scale(0.09 -0.09)">
       <defs>
@@ -1008,7 +1072,7 @@ z
   </g>
  </g>
  <defs>
-  <clipPath id="p6ce2d8aa0c">
+  <clipPath id="p15be793cf3">
    <rect x="7.2" y="30.117344" width="555.881176" height="473.04"/>
   </clipPath>
  </defs>

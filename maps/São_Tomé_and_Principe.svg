@@ -6,7 +6,7 @@
   <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
    <cc:Work>
     <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
-    <dc:date>2026-06-19T08:14:16.999346</dc:date>
+    <dc:date>2026-06-19T08:36:34.173838</dc:date>
     <dc:format>image/svg+xml</dc:format>
     <dc:creator>
      <cc:Agent>
@@ -84,7 +84,7 @@ L 141.775355 365.428592
 L 141.312984 364.994798 
 L 136.689276 350.462697 
 z
-" clip-path="url(#p17b038e675)" style="fill: #e74c3c; stroke: #ffffff; stroke-width: 0.6"/>
+" clip-path="url(#p9b87f4f9b7)" style="fill: #e74c3c; stroke: #ffffff; stroke-width: 0.6"/>
     <path d="M 247.195891 172.607139 
 L 247.658262 170.221272 
 L 248.583003 170.438169 
@@ -127,7 +127,7 @@ L 250.894857 177.378873
 L 249.045374 177.378873 
 L 247.658262 176.511285 
 z
-" clip-path="url(#p17b038e675)" style="fill: #e74c3c; stroke: #ffffff; stroke-width: 0.6"/>
+" clip-path="url(#p9b87f4f9b7)" style="fill: #e74c3c; stroke: #ffffff; stroke-width: 0.6"/>
    </g>
    <g id="text_1">
     <!-- São Tomé and Principe -->
@@ -545,6 +545,41 @@ z
      <use xlink:href="#DejaVuSans-Bold-48" transform="translate(1211.78125 0)"/>
     </g>
    </g>
+   <g id="line2d_1">
+    <path d="M 126.740097 362.23243 
+" clip-path="url(#p9b87f4f9b7)" style="fill: none; stroke: #ffffff; stroke-width: 1.5; stroke-linecap: square"/>
+    <defs>
+     <path id="m99c84ce698" d="M 0 2.5 
+C 0.663008 2.5 1.29895 2.236584 1.767767 1.767767 
+C 2.236584 1.29895 2.5 0.663008 2.5 0 
+C 2.5 -0.663008 2.236584 -1.29895 1.767767 -1.767767 
+C 1.29895 -2.236584 0.663008 -2.5 0 -2.5 
+C -0.663008 -2.5 -1.29895 -2.236584 -1.767767 -1.767767 
+C -2.236584 -1.29895 -2.5 -0.663008 -2.5 0 
+C -2.5 0.663008 -2.236584 1.29895 -1.767767 1.767767 
+C -1.29895 2.236584 -0.663008 2.5 0 2.5 
+z
+" style="stroke: #1a252f; stroke-width: 0.8"/>
+    </defs>
+    <g clip-path="url(#p9b87f4f9b7)">
+     <use xlink:href="#m99c84ce698" x="126.740097" y="362.23243" style="fill: #ffffff; stroke: #1a252f; stroke-width: 0.8"/>
+    </g>
+   </g>
+   <g id="text_2">
+    <g clip-path="url(#p9b87f4f9b7)">
+     <!-- Sao Tome -->
+     <g style="fill: #ffffff" transform="translate(141.511688 364.180672) scale(0.075 -0.075)">
+      <use xlink:href="#DejaVuSans-Bold-36"/>
+      <use xlink:href="#DejaVuSans-Bold-44" transform="translate(72.015625 0)"/>
+      <use xlink:href="#DejaVuSans-Bold-52" transform="translate(139.5 0)"/>
+      <use xlink:href="#DejaVuSans-Bold-3" transform="translate(208.203125 0)"/>
+      <use xlink:href="#DejaVuSans-Bold-37" transform="translate(243.015625 0)"/>
+      <use xlink:href="#DejaVuSans-Bold-52" transform="translate(297.953125 0)"/>
+      <use xlink:href="#DejaVuSans-Bold-50" transform="translate(366.65625 0)"/>
+      <use xlink:href="#DejaVuSans-Bold-48" transform="translate(470.859375 0)"/>
+     </g>
+    </g>
+   </g>
    <g id="legend_1">
     <g id="patch_2">
      <path d="M 13.5 498.617344 
@@ -567,7 +602,7 @@ L 15.3 473.054531
 z
 " style="fill: #e74c3c; stroke: #888888; stroke-linejoin: miter"/>
     </g>
-    <g id="text_2">
+    <g id="text_3">
      <!-- São Tomé and Principe -->
      <g transform="translate(40.5 479.354531) scale(0.09 -0.09)">
       <defs>
@@ -984,7 +1019,7 @@ L 15.3 486.555234
 z
 " style="fill: #bdc3c7; stroke: #888888; stroke-linejoin: miter"/>
     </g>
-    <g id="text_3">
+    <g id="text_4">
      <!-- Neighbors -->
      <g transform="translate(40.5 492.855234) scale(0.09 -0.09)">
       <defs>
@@ -1127,7 +1162,7 @@ z
   </g>
  </g>
  <defs>
-  <clipPath id="p17b038e675">
+  <clipPath id="p9b87f4f9b7">
    <rect x="7.2" y="30.797344" width="385.668144" height="472.32"/>
   </clipPath>
  </defs>

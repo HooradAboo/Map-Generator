@@ -6,7 +6,7 @@
   <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
    <cc:Work>
     <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
-    <dc:date>2026-06-19T08:13:50.001314</dc:date>
+    <dc:date>2026-06-19T08:36:05.734429</dc:date>
     <dc:format>image/svg+xml</dc:format>
     <dc:creator>
      <cc:Agent>
@@ -251,7 +251,7 @@ L -105.981119 273.575646
 L -110.523505 265.770056 
 L -112.037634 261.867261 
 z
-" clip-path="url(#p71309c1a7d)" style="fill: #bdc3c7; stroke: #ffffff; stroke-width: 0.5"/>
+" clip-path="url(#pfb75ff135e)" style="fill: #bdc3c7; stroke: #ffffff; stroke-width: 0.5"/>
     <path d="M 208.200583 264.035481 
 L 209.714712 260.999974 
 L 211.228841 259.699042 
@@ -300,7 +300,7 @@ L 214.257098 273.575646
 L 215.014162 267.938275 
 L 213.500034 266.2037 
 z
-" clip-path="url(#p71309c1a7d)" style="fill: #bdc3c7; stroke: #ffffff; stroke-width: 0.5"/>
+" clip-path="url(#pfb75ff135e)" style="fill: #bdc3c7; stroke: #ffffff; stroke-width: 0.5"/>
     <path d="M 199.872876 277.044796 
 L 200.62994 276.611153 
 L 201.387004 276.611153 
@@ -320,7 +320,7 @@ L 202.144069 279.213016
 L 202.144069 277.912084 
 L 201.387004 277.47844 
 z
-" clip-path="url(#p71309c1a7d)" style="fill: #bdc3c7; stroke: #ffffff; stroke-width: 0.5"/>
+" clip-path="url(#pfb75ff135e)" style="fill: #bdc3c7; stroke: #ffffff; stroke-width: 0.5"/>
     <path d="M 195.330489 272.708358 
 L 196.087554 271.407426 
 L 196.087554 270.540138 
@@ -331,7 +331,7 @@ L 196.844618 273.142002
 L 196.087554 273.575646 
 L 196.087554 273.142002 
 z
-" clip-path="url(#p71309c1a7d)" style="fill: #bdc3c7; stroke: #ffffff; stroke-width: 0.5"/>
+" clip-path="url(#pfb75ff135e)" style="fill: #bdc3c7; stroke: #ffffff; stroke-width: 0.5"/>
     <path d="M -20.432849 231.945835 
 L -20.432849 228.910328 
 L -20.432849 227.175753 
@@ -524,7 +524,7 @@ L -13.619269 238.450493
 L -16.647527 237.149561 
 L -18.91872 234.547698 
 z
-" clip-path="url(#p71309c1a7d)" style="fill: #bdc3c7; stroke: #ffffff; stroke-width: 0.5"/>
+" clip-path="url(#pfb75ff135e)" style="fill: #bdc3c7; stroke: #ffffff; stroke-width: 0.5"/>
     <path d="M -43.901843 228.04304 
 L -40.116521 226.308465 
 L -35.574135 225.874821 
@@ -534,7 +534,7 @@ L -38.602393 231.512191
 L -40.873586 231.945835 
 L -43.144779 229.343972 
 z
-" clip-path="url(#p71309c1a7d)" style="fill: #bdc3c7; stroke: #ffffff; stroke-width: 0.5"/>
+" clip-path="url(#pfb75ff135e)" style="fill: #bdc3c7; stroke: #ffffff; stroke-width: 0.5"/>
     <path d="M -24.975235 226.742109 
 L -20.432849 227.175753 
 L -20.432849 228.910328 
@@ -718,7 +718,7 @@ L -20.432849 239.751424
 L -21.946977 237.149561 
 L -23.461106 233.68041 
 z
-" clip-path="url(#p71309c1a7d)" style="fill: #bdc3c7; stroke: #ffffff; stroke-width: 0.5"/>
+" clip-path="url(#pfb75ff135e)" style="fill: #bdc3c7; stroke: #ffffff; stroke-width: 0.5"/>
     <path d="M 229.398385 258.39811 
 L 230.912514 256.229891 
 L 232.426642 257.097179 
@@ -739,7 +739,7 @@ L 236.211964 260.999974
 L 233.940771 260.132686 
 L 231.669578 259.265398 
 z
-" clip-path="url(#p71309c1a7d)" style="fill: #bdc3c7; stroke: #ffffff; stroke-width: 0.5"/>
+" clip-path="url(#pfb75ff135e)" style="fill: #bdc3c7; stroke: #ffffff; stroke-width: 0.5"/>
     <path d="M -46.930101 229.777616 
 L -43.901843 228.04304 
 L -43.144779 229.343972 
@@ -757,11 +757,11 @@ L -39.359457 234.981342
 L -42.387715 234.547698 
 L -45.415972 232.379479 
 z
-" clip-path="url(#p71309c1a7d)" style="fill: #bdc3c7; stroke: #ffffff; stroke-width: 0.5"/>
+" clip-path="url(#pfb75ff135e)" style="fill: #bdc3c7; stroke: #ffffff; stroke-width: 0.5"/>
    </g>
    <g id="PatchCollection_2">
     <defs>
-     <path id="mf09a2626bf" d="M 181.703331 -248.490082 
+     <path id="m697cfc53cf" d="M 181.703331 -248.490082 
 L 183.21746 -250.658302 
 L 186.245717 -251.525589 
 L 188.51691 -253.693809 
@@ -870,8 +870,8 @@ L 196.087554 -238.949918
 z
 " style="stroke: #ffffff; stroke-width: 0.6"/>
     </defs>
-    <g clip-path="url(#p71309c1a7d)">
-     <use xlink:href="#mf09a2626bf" x="0" y="510.357344" style="fill: #e74c3c; stroke: #ffffff; stroke-width: 0.6"/>
+    <g clip-path="url(#pfb75ff135e)">
+     <use xlink:href="#m697cfc53cf" x="0" y="510.357344" style="fill: #e74c3c; stroke: #ffffff; stroke-width: 0.6"/>
     </g>
    </g>
    <g id="text_1">
@@ -886,9 +886,9 @@ Q 20.836723 293.393345 20.836723 294.793345
 L 20.836723 301.793345 
 Q 20.836723 303.193345 22.236723 303.193345 
 z
-" clip-path="url(#p71309c1a7d)" style="fill: #ffffff; opacity: 0.6"/>
+" clip-path="url(#pfb75ff135e)" style="fill: #ffffff; opacity: 0.6"/>
     </g>
-    <g clip-path="url(#p71309c1a7d)">
+    <g clip-path="url(#pfb75ff135e)">
      <!-- Cyprus -->
      <g style="fill: #1a252f" transform="translate(22.236723 300.111705) scale(0.07 -0.07)">
       <defs>
@@ -1049,9 +1049,9 @@ Q 191.025704 180.212298 191.025704 181.612298
 L 191.025704 188.612298 
 Q 191.025704 190.012298 192.425704 190.012298 
 z
-" clip-path="url(#p71309c1a7d)" style="fill: #ffffff; opacity: 0.6"/>
+" clip-path="url(#pfb75ff135e)" style="fill: #ffffff; opacity: 0.6"/>
     </g>
-    <g clip-path="url(#p71309c1a7d)">
+    <g clip-path="url(#pfb75ff135e)">
      <!-- N. Cyprus -->
      <g style="fill: #1a252f" transform="translate(192.425704 186.930658) scale(0.07 -0.07)">
       <defs>
@@ -1101,9 +1101,9 @@ Q 193.508628 253.931481 193.508628 255.331481
 L 193.508628 262.332028 
 Q 193.508628 263.732028 194.908628 263.732028 
 z
-" clip-path="url(#p71309c1a7d)" style="fill: #ffffff; opacity: 0.6"/>
+" clip-path="url(#pfb75ff135e)" style="fill: #ffffff; opacity: 0.6"/>
     </g>
-    <g clip-path="url(#p71309c1a7d)">
+    <g clip-path="url(#pfb75ff135e)">
      <!-- Cyprus U.N. Buffer Zone -->
      <g style="fill: #1a252f" transform="translate(194.908628 260.650387) scale(0.07 -0.07)">
       <defs>
@@ -1762,7 +1762,7 @@ z
   </g>
  </g>
  <defs>
-  <clipPath id="p71309c1a7d">
+  <clipPath id="pfb75ff135e">
    <rect x="7.2" y="30.117344" width="401.244102" height="473.04"/>
   </clipPath>
  </defs>

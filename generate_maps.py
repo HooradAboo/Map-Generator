@@ -2,6 +2,7 @@ import json
 import os
 import sys
 import warnings
+import urllib.request
 import geopandas as gpd
 import matplotlib
 matplotlib.use('Agg')
@@ -15,6 +16,91 @@ BUFFER_DEG = 0.15   # degrees; catches shared land borders
 COLOR_FOCUS    = '#e74c3c'  # red   – the country itself
 COLOR_NEIGHBOR = '#bdc3c7'  # gray – neighbors
 COLOR_OCEAN    = '#d6eaf8'  # light blue – background
+
+# ── name mapping: countries.json name → capitals dataset name ─────────────────
+NAME_MAP = {
+    'Antigua and Barb.':        'Antigua and Barbuda',
+    'Bosnia and Herz.':         'Bosnia and Herzegovina',
+    'Br. Indian Ocean Ter.':    'British Indian Ocean Territory',
+    'British Virgin Is.':       'British Virgin Islands',
+    'Cabo Verde':               'Cape Verde',
+    'Cayman Is.':               'Cayman Islands',
+    'Central African Rep.':     'Central African Republic',
+    'Congo':                    'Congo Republic',
+    'Cook Is.':                 'Cook Islands',
+    "Côte d'Ivoire":            'Ivory Coast',
+    'Czechia':                  'Czech Republic',
+    'Dem. Rep. Congo':          'Congo Democratic Republic',
+    'Dominican Rep.':           'Dominican Republic',
+    'Eq. Guinea':               'Equatorial Guinea',
+    'Faeroe Is.':               'Faroe Islands',
+    'Falkland Is.':             'Falkland Islands',
+    'Fr. Polynesia':            'French Polynesia',
+    'Fr. S. Antarctic Lands':   'French Southern Territories',
+    'Heard I. and McDonald Is.':'Heard Island and McDonald Islands',
+    'Macao':                    'Macao',
+    'Marshall Is.':             'Marshall Islands',
+    'N. Mariana Is.':           'Northern Mariana Islands',
+    'North Korea':              'Korea North',
+    'Palestine':                'Palestinian Territory',
+    'Pitcairn Is.':             'Pitcairn',
+    'Saint Helena':             'Saint Helena Ascension and Tristan da Cunha',
+    'Solomon Is.':              'Solomon Islands',
+    'South Korea':              'Korea South',
+    'São Tomé and Principe':    'Sao Tome and Principe',
+    'St-Barthélemy':            'Saint Barthelemy',
+    'St-Martin':                'Saint Martin',
+    'St. Kitts and Nevis':      'Saint Kitts and Nevis',
+    'St. Pierre and Miquelon':  'Saint Pierre and Miquelon',
+    'St. Vin. and Gren.':       'Saint Vincent and the Grenadines',
+    'Turks and Caicos Is.':     'Turks and Caicos Islands',
+    'U.S. Virgin Is.':          'Virgin Islands',
+    'United States of America': 'United States',
+    'W. Sahara':                'Western Sahara',
+    'Wallis and Futuna Is.':    'Wallis and Futuna',
+    'eSwatini':                 'Swaziland',
+    'Macedonia':                'Macedonia',
+}
+
+# hardcoded fallbacks for countries not in the dataset at all
+HARDCODED = {
+    'Kosovo':       ('Pristina',    21.17,  42.67),
+    'S. Sudan':     ('Juba',        31.57,   4.85),
+    'Sint Maarten': ('Philipsburg', -63.05, 18.03),
+    'Curaçao':      ('Willemstad',  -68.93, 12.11),
+    'N. Cyprus':    ('North Nicosia', 33.36, 35.18),
+    'Somaliland':   ('Hargeisa',    44.07,   9.56),
+    'Åland':        ('Mariehamn',   19.94,  60.10),
+    'Nauru':        ('Yaren',       166.92,  -0.55),
+}
+
+# ── fetch capitals ─────────────────────────────────────────────────────────────
+print('Fetching capitals …')
+capitals = {}   # our-country-name → {'city': str, 'lon': float, 'lat': float}
+try:
+    url = 'https://raw.githubusercontent.com/Stefie/geojson-world/master/capitals.geojson'
+    with urllib.request.urlopen(url, timeout=10) as r:
+        cap_raw = json.loads(r.read())
+    dataset = {}
+    for feat in cap_raw['features']:
+        p = feat['properties']
+        if p.get('country') and p.get('city'):
+            lon, lat = feat['geometry']['coordinates']
+            dataset[p['country']] = {'city': p['city'], 'lon': lon, 'lat': lat}
+
+    with open(COUNTRIES_FILE) as f:
+        _tmp = json.load(f)
+    for feat in _tmp['features']:
+        name = feat['properties']['name']
+        key  = NAME_MAP.get(name, name)          # translate if needed
+        if key in dataset:
+            capitals[name] = dataset[key]
+        elif name in HARDCODED:
+            city, lon, lat = HARDCODED[name]
+            capitals[name] = {'city': city, 'lon': lon, 'lat': lat}
+    print(f'  loaded {len(capitals)} capitals')
+except Exception as e:
+    print(f'  warning: could not fetch capitals ({e})')
 
 # ── load ──────────────────────────────────────────────────────────────────────
 with open(COUNTRIES_FILE) as f:
@@ -86,6 +172,16 @@ for idx, (_, row) in enumerate(gdf.iterrows(), 1):
                           alpha=0.6, edgecolor='none'),
                 clip_on=True,
             )
+
+    # ── capital marker ────────────────────────────────────────────────────────
+    cap = capitals.get(country)
+    if cap:
+        cx, cy = cap['lon'], cap['lat']
+        ax.plot(cx, cy, marker='o', markersize=5, color='white',
+                markeredgecolor='#1a252f', markeredgewidth=0.8, zorder=5)
+        ax.text(cx + (maxx - minx) * 0.015 + 0.1, cy, cap['city'],
+                fontsize=7.5, va='center', color='white', fontweight='bold',
+                clip_on=True, zorder=5)
 
     ax.set_xlim(*xlim)
     ax.set_ylim(*ylim)

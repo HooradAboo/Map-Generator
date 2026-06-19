@@ -6,7 +6,7 @@
   <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
    <cc:Work>
     <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
-    <dc:date>2026-06-19T08:14:16.861620</dc:date>
+    <dc:date>2026-06-19T08:36:34.031515</dc:date>
     <dc:format>image/svg+xml</dc:format>
     <dc:creator>
      <cc:Agent>
@@ -113,7 +113,7 @@ L 99.311117 435.611787
 L 97.466623 433.985145 
 L 97.0055 433.536416 
 z
-" clip-path="url(#p7f1c659fa4)" style="fill: #e74c3c; stroke: #ffffff; stroke-width: 0.6"/>
+" clip-path="url(#p75209f007e)" style="fill: #e74c3c; stroke: #ffffff; stroke-width: 0.6"/>
     <path d="M 289.985708 410.034245 
 L 289.985708 409.417243 
 L 290.331551 409.136787 
@@ -132,7 +132,7 @@ L 291.59964 410.651247
 L 291.023236 411.043885 
 L 290.100989 410.090336 
 z
-" clip-path="url(#p7f1c659fa4)" style="fill: #e74c3c; stroke: #ffffff; stroke-width: 0.6"/>
+" clip-path="url(#p75209f007e)" style="fill: #e74c3c; stroke: #ffffff; stroke-width: 0.6"/>
     <path d="M 71.989547 97.887265 
 L 71.989547 97.550718 
 L 71.989547 97.438536 
@@ -145,7 +145,7 @@ L 73.372917 100.074818
 L 72.681232 99.289542 
 L 72.104828 98.335994 
 z
-" clip-path="url(#p7f1c659fa4)" style="fill: #e74c3c; stroke: #ffffff; stroke-width: 0.6"/>
+" clip-path="url(#p75209f007e)" style="fill: #e74c3c; stroke: #ffffff; stroke-width: 0.6"/>
    </g>
    <g id="text_1">
     <!-- Mauritius -->
@@ -317,6 +317,97 @@ z
      <use xlink:href="#DejaVuSans-Bold-56" transform="translate(475.046875 0)"/>
     </g>
    </g>
+   <g id="line2d_1">
+    <path d="M 96.455581 421.752791 
+" clip-path="url(#p75209f007e)" style="fill: none; stroke: #ffffff; stroke-width: 1.5; stroke-linecap: square"/>
+    <defs>
+     <path id="mfb71ede7fc" d="M 0 2.5 
+C 0.663008 2.5 1.29895 2.236584 1.767767 1.767767 
+C 2.236584 1.29895 2.5 0.663008 2.5 0 
+C 2.5 -0.663008 2.236584 -1.29895 1.767767 -1.767767 
+C 1.29895 -2.236584 0.663008 -2.5 0 -2.5 
+C -0.663008 -2.5 -1.29895 -2.236584 -1.767767 -1.767767 
+C -2.236584 -1.29895 -2.5 -0.663008 -2.5 0 
+C -2.5 0.663008 -2.236584 1.29895 -1.767767 1.767767 
+C -1.29895 2.236584 -0.663008 2.5 0 2.5 
+z
+" style="stroke: #1a252f; stroke-width: 0.8"/>
+    </defs>
+    <g clip-path="url(#p75209f007e)">
+     <use xlink:href="#mfb71ede7fc" x="96.455581" y="421.752791" style="fill: #ffffff; stroke: #1a252f; stroke-width: 0.8"/>
+    </g>
+   </g>
+   <g id="text_2">
+    <g clip-path="url(#p75209f007e)">
+     <!-- Port Louis -->
+     <g style="fill: #ffffff" transform="translate(103.005553 423.701326) scale(0.075 -0.075)">
+      <defs>
+       <path id="DejaVuSans-Bold-33" d="M 588 4666 
+L 2584 4666 
+Q 3475 4666 3951 4270 
+Q 4428 3875 4428 3144 
+Q 4428 2409 3951 2014 
+Q 3475 1619 2584 1619 
+L 1791 1619 
+L 1791 0 
+L 588 0 
+L 588 4666 
+z
+M 1791 3794 
+L 1791 2491 
+L 2456 2491 
+Q 2806 2491 2997 2661 
+Q 3188 2831 3188 3144 
+Q 3188 3456 2997 3625 
+Q 2806 3794 2456 3794 
+L 1791 3794 
+z
+" transform="scale(0.015625)"/>
+       <path id="DejaVuSans-Bold-52" d="M 2203 2784 
+Q 1831 2784 1636 2517 
+Q 1441 2250 1441 1747 
+Q 1441 1244 1636 976 
+Q 1831 709 2203 709 
+Q 2569 709 2762 976 
+Q 2956 1244 2956 1747 
+Q 2956 2250 2762 2517 
+Q 2569 2784 2203 2784 
+z
+M 2203 3584 
+Q 3106 3584 3614 3096 
+Q 4122 2609 4122 1747 
+Q 4122 884 3614 396 
+Q 3106 -91 2203 -91 
+Q 1297 -91 786 396 
+Q 275 884 275 1747 
+Q 275 2609 786 3096 
+Q 1297 3584 2203 3584 
+z
+" transform="scale(0.015625)"/>
+       <path id="DejaVuSans-Bold-3" transform="scale(0.015625)"/>
+       <path id="DejaVuSans-Bold-2f" d="M 588 4666 
+L 1791 4666 
+L 1791 909 
+L 3903 909 
+L 3903 0 
+L 588 0 
+L 588 4666 
+z
+" transform="scale(0.015625)"/>
+      </defs>
+      <use xlink:href="#DejaVuSans-Bold-33"/>
+      <use xlink:href="#DejaVuSans-Bold-52" transform="translate(73.296875 0)"/>
+      <use xlink:href="#DejaVuSans-Bold-55" transform="translate(142 0)"/>
+      <use xlink:href="#DejaVuSans-Bold-57" transform="translate(191.3125 0)"/>
+      <use xlink:href="#DejaVuSans-Bold-3" transform="translate(239.109375 0)"/>
+      <use xlink:href="#DejaVuSans-Bold-2f" transform="translate(273.921875 0)"/>
+      <use xlink:href="#DejaVuSans-Bold-52" transform="translate(337.640625 0)"/>
+      <use xlink:href="#DejaVuSans-Bold-58" transform="translate(406.34375 0)"/>
+      <use xlink:href="#DejaVuSans-Bold-4c" transform="translate(477.53125 0)"/>
+      <use xlink:href="#DejaVuSans-Bold-56" transform="translate(511.8125 0)"/>
+     </g>
+    </g>
+   </g>
    <g id="legend_1">
     <g id="patch_2">
      <path d="M 13.5 498.657344 
@@ -339,7 +430,7 @@ L 15.3 473.094531
 z
 " style="fill: #e74c3c; stroke: #888888; stroke-linejoin: miter"/>
     </g>
-    <g id="text_2">
+    <g id="text_3">
      <!-- Mauritius -->
      <g transform="translate(40.5 479.394531) scale(0.09 -0.09)">
       <defs>
@@ -516,7 +607,7 @@ L 15.3 486.595234
 z
 " style="fill: #bdc3c7; stroke: #888888; stroke-linejoin: miter"/>
     </g>
-    <g id="text_3">
+    <g id="text_4">
      <!-- Neighbors -->
      <g transform="translate(40.5 492.895234) scale(0.09 -0.09)">
       <defs>
@@ -674,7 +765,7 @@ z
   </g>
  </g>
  <defs>
-  <clipPath id="p7f1c659fa4">
+  <clipPath id="p75209f007e">
    <rect x="7.2" y="30.117344" width="352.762895" height="473.04"/>
   </clipPath>
  </defs>
