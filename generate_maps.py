@@ -23,18 +23,19 @@ PAD_MIN         = 0.8     # minimum padding in degrees
 COLOR_FOCUS     = '#e74c3c'   # the country itself
 COLOR_NEIGHBOR  = '#bdc3c7'   # neighbors
 COLOR_OCEAN     = '#d6eaf8'   # background
-COLOR_LABEL     = '#1a252f'   # neighbor labels and capital text
-COLOR_CAP_DOT   = 'white'     # capital marker fill
+COLOR_LABEL     = '#1a252f'   # capital text
+COLOR_NBR_LABEL = '#d6eaf8'   # neighbor country name labels
+COLOR_CAP_DOT   = '#d6eaf8'     # capital marker fill
 
 # ── figure ────────────────────────────────────────────────────────────────────
-FIG_SIZE          = (12, 7)
+FIG_SIZE          = (16, 10)
 TITLE_FONTSIZE    = 17
-NEIGHBOR_FONTSIZE = 7
-CAPITAL_FONTSIZE  = 7.5
+NEIGHBOR_FONTSIZE = 30
+CAPITAL_FONTSIZE  = 25
 LEGEND_FONTSIZE   = 9
 BORDER_LINEWIDTH  = 0.5
 FOCUS_LINEWIDTH   = 0.6
-CAP_MARKERSIZE    = 5
+CAP_MARKERSIZE    = 15
 CAP_EDGE_WIDTH    = 0.8
 CAP_LABEL_OFFSET  = 0.1   # degrees; horizontal nudge on the capital label
 
@@ -194,10 +195,14 @@ for idx, (_, row) in enumerate(render_gdf.iterrows(), 1):
 
     minx, miny, maxx, maxy = gdf[focus_mask].total_bounds
     w, h = maxx - minx, maxy - miny
-    pad = max(w, h) * PAD_FACTOR + PAD_MIN
+    cx, cy = (minx + maxx) / 2, (miny + maxy) / 2
+    target_ratio = FIG_SIZE[0] / FIG_SIZE[1]
 
-    xlim = (minx - pad, maxx + pad)
-    ylim = (miny - pad, maxy + pad)
+    fh = h / 0.90
+    fw = fh * target_ratio
+
+    xlim = (cx - fw / 2, cx + fw / 2)
+    ylim = (cy - fh / 2, cy + fh / 2)
 
     fig, ax = plt.subplots(figsize=FIG_SIZE)
     fig.patch.set_facecolor(COLOR_OCEAN)
@@ -211,11 +216,8 @@ for idx, (_, row) in enumerate(render_gdf.iterrows(), 1):
         if xlim[0] <= pt.x <= xlim[1] and ylim[0] <= pt.y <= ylim[1]:
             ax.text(
                 pt.x, pt.y, nb['name'],
-                fontsize=NEIGHBOR_FONTSIZE, ha='center', va='center', color=COLOR_LABEL,
-                fontweight='bold',
-                bbox=dict(boxstyle='round,pad=0.2', facecolor='white',
-                          alpha=0.6, edgecolor='none'),
-                clip_on=True,
+                fontsize=NEIGHBOR_FONTSIZE, ha='center', va='center', color=COLOR_NBR_LABEL,
+                fontweight='bold', clip_on=True,
             )
 
     cap = capitals.get(country)
@@ -230,7 +232,6 @@ for idx, (_, row) in enumerate(render_gdf.iterrows(), 1):
     ax.set_xlim(*xlim)
     ax.set_ylim(*ylim)
     ax.set_axis_off()
-    ax.set_title(country, fontsize=TITLE_FONTSIZE, fontweight='bold', pad=10, color=COLOR_LABEL)
 
     plt.tight_layout(pad=0.4)
     safe_name = country.replace('/', '_').replace(' ', '_')
