@@ -28,7 +28,7 @@ COLOR_NBR_LABEL = '#d6eaf8'   # neighbor country name labels
 COLOR_CAP_DOT   = '#d6eaf8'     # capital marker fill
 
 # ── figure ────────────────────────────────────────────────────────────────────
-FIG_SIZE          = (16, 10)
+FIG_SIZE          = (18, 8)
 TITLE_FONTSIZE    = 17
 NEIGHBOR_FONTSIZE = 30
 CAPITAL_FONTSIZE  = 25
@@ -200,6 +200,9 @@ for idx, (_, row) in enumerate(render_gdf.iterrows(), 1):
 
     fh = h / 0.90
     fw = fh * target_ratio
+    if w / fw >= 0.70:
+        fw = w / 0.70
+        fh = fw / target_ratio
 
     xlim = (cx - fw / 2, cx + fw / 2)
     ylim = (cy - fh / 2, cy + fh / 2)
