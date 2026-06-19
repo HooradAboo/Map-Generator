@@ -1,0 +1,260 @@
+
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: var(--font-sans); }
+#app { padding: 1rem 0; }
+.controls { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; margin-bottom: 1rem; }
+.controls select { flex: 1; min-width: 140px; }
+.card-area { border: 0.5px solid var(--color-border-tertiary); border-radius: var(--border-radius-lg); background: var(--color-background-secondary); display: flex; align-items: center; justify-content: center; min-height: 340px; position: relative; overflow: hidden; }
+#map-svg { max-width: 100%; max-height: 320px; }
+#map-svg path { fill: var(--color-text-primary); }
+.answer-row { display: flex; gap: 8px; align-items: center; margin-top: 1rem; flex-wrap: wrap; }
+.answer-row button { flex: 1; min-width: 120px; }
+#reveal-btn { flex: 2; }
+#answer-display { margin-top: 0.75rem; text-align: center; font-size: 22px; font-weight: 500; color: var(--color-text-primary); min-height: 36px; }
+#counter { font-size: 13px; color: var(--color-text-secondary); margin-top: 0.5rem; text-align: center; }
+.region-badge { font-size: 12px; color: var(--color-text-secondary); text-align: center; margin-top: 4px; }
+</style>
+<div id="app">
+  <h2 class="sr-only">Country shape flashcards. A silhouette of a country is shown. Try to guess which country it is.</h2>
+  <div class="controls">
+    <select id="region-select">
+      <option value="all">All regions</option>
+      <option value="Europe">Europe</option>
+      <option value="Asia">Asia</option>
+      <option value="Africa">Africa</option>
+      <option value="Americas">Americas</option>
+      <option value="Oceania">Oceania</option>
+    </select>
+    <button onclick="shuffle()">↻ Shuffle</button>
+  </div>
+  <div class="card-area">
+    <svg id="map-svg" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"><text x="100" y="105" text-anchor="middle" font-size="14" fill="var(--color-text-secondary)">Loading...</text></svg>
+  </div>
+  <div class="region-badge" id="region-badge"></div>
+  <div id="answer-display"></div>
+  <div class="answer-row">
+    <button id="reveal-btn" onclick="reveal()">Show answer</button>
+    <button onclick="next()">Next →</button>
+  </div>
+  <div id="counter"></div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/topojson-client@3/dist/topojson-client.min.js"></script>
+<script>
+let countries = [];
+let filtered = [];
+let idx = 0;
+let revealed = false;
+
+const regionMap = {
+  "Afghanistan":"Asia","Albania":"Europe","Algeria":"Africa","Angola":"Africa","Argentina":"Americas",
+  "Armenia":"Asia","Australia":"Oceania","Austria":"Europe","Azerbaijan":"Asia","Bahrain":"Asia",
+  "Bangladesh":"Asia","Belarus":"Europe","Belgium":"Europe","Benin":"Africa","Bhutan":"Asia",
+  "Bolivia":"Americas","Bosnia and Herz.":"Europe","Botswana":"Africa","Brazil":"Americas",
+  "Bulgaria":"Europe","Burkina Faso":"Africa","Burundi":"Africa","Cambodia":"Asia","Cameroon":"Africa",
+  "Canada":"Americas","Central African Rep.":"Africa","Chad":"Africa","Chile":"Americas","China":"Asia",
+  "Colombia":"Americas","Congo":"Africa","Dem. Rep. Congo":"Africa","Costa Rica":"Americas",
+  "Croatia":"Europe","Cuba":"Americas","Cyprus":"Europe","Czechia":"Europe","Denmark":"Europe",
+  "Djibouti":"Africa","Dominican Rep.":"Americas","Ecuador":"Americas","Egypt":"Africa",
+  "El Salvador":"Americas","Eq. Guinea":"Africa","Eritrea":"Africa","Estonia":"Europe","Ethiopia":"Africa",
+  "Finland":"Europe","France":"Europe","Gabon":"Africa","Gambia":"Africa","Georgia":"Asia",
+  "Germany":"Europe","Ghana":"Africa","Greece":"Europe","Guatemala":"Americas","Guinea":"Africa",
+  "Guinea-Bissau":"Africa","Haiti":"Americas","Honduras":"Americas","Hungary":"Europe","India":"Asia",
+  "Indonesia":"Asia","Iran":"Asia","Iraq":"Asia","Ireland":"Europe","Israel":"Asia","Italy":"Europe",
+  "Ivory Coast":"Africa","Jamaica":"Americas","Japan":"Asia","Jordan":"Asia","Kazakhstan":"Asia",
+  "Kenya":"Africa","Kosovo":"Europe","Kuwait":"Asia","Kyrgyzstan":"Asia","Laos":"Asia","Latvia":"Europe",
+  "Lebanon":"Asia","Lesotho":"Africa","Liberia":"Africa","Libya":"Africa","Lithuania":"Europe",
+  "Luxembourg":"Europe","Macedonia":"Europe","Madagascar":"Africa","Malawi":"Africa","Malaysia":"Asia",
+  "Mali":"Africa","Mauritania":"Africa","Mexico":"Americas","Moldova":"Europe","Mongolia":"Asia",
+  "Montenegro":"Europe","Morocco":"Africa","Mozambique":"Africa","Myanmar":"Asia","Namibia":"Africa",
+  "Nepal":"Asia","Netherlands":"Europe","New Zealand":"Oceania","Nicaragua":"Americas","Niger":"Africa",
+  "Nigeria":"Africa","North Korea":"Asia","Norway":"Europe","Oman":"Asia","Pakistan":"Asia",
+  "Panama":"Americas","Papua New Guinea":"Oceania","Paraguay":"Americas","Peru":"Americas",
+  "Philippines":"Asia","Poland":"Europe","Portugal":"Europe","Puerto Rico":"Americas","Qatar":"Asia",
+  "Romania":"Europe","Russia":"Europe","Rwanda":"Africa","Saudi Arabia":"Asia","Senegal":"Africa",
+  "Serbia":"Europe","Sierra Leone":"Africa","Slovakia":"Europe","Slovenia":"Europe","Solomon Is.":"Oceania",
+  "Somalia":"Africa","South Africa":"Africa","South Korea":"Asia","South Sudan":"Africa","Spain":"Europe",
+  "Sri Lanka":"Asia","Sudan":"Africa","Suriname":"Americas","Swaziland":"Africa","Sweden":"Europe",
+  "Switzerland":"Europe","Syria":"Asia","Taiwan":"Asia","Tajikistan":"Asia","Tanzania":"Africa",
+  "Thailand":"Asia","Timor-Leste":"Asia","Togo":"Africa","Trinidad and Tobago":"Americas","Tunisia":"Africa",
+  "Turkey":"Asia","Turkmenistan":"Asia","Uganda":"Africa","Ukraine":"Europe","United Arab Emirates":"Asia",
+  "United Kingdom":"Europe","United States of America":"Americas","Uruguay":"Americas","Uzbekistan":"Asia",
+  "Venezuela":"Americas","Vietnam":"Asia","Yemen":"Asia","Zambia":"Africa","Zimbabwe":"Africa",
+  "W. Sahara":"Africa","Somaliland":"Africa","N. Cyprus":"Asia","Falkland Is.":"Americas","New Caledonia":"Oceania",
+  "Vanuatu":"Oceania","Fiji":"Oceania","S. Sudan":"Africa"
+};
+
+async function loadMap() {
+  const res = await fetch("https://cdn.jsdelivr.net/npm/world-atlas@2/countries-10m.json");
+  const world = await res.json();
+  const geo = topojson.feature(world, world.objects.countries);
+  const namesRes = await fetch("https://cdn.jsdelivr.net/npm/world-atlas@2/countries-10m.json");
+  // Use a names lookup via a separate small dataset
+  const nameRes = await fetch("https://cdn.jsdelivr.net/npm/country-code-lookup/data/lookup.json").catch(() => null);
+  
+  // Load country names from a reliable source
+  const nmRes = await fetch("https://cdn.jsdelivr.net/npm/topojson-specification/README.md").catch(()=>null);
+
+  // Use world atlas which has numeric ISO codes, map to names
+  // Load country names JSON
+  const cnRes = await fetch("https://cdn.jsdelivr.net/npm/world-atlas@2/countries-10m.json");
+  const cnData = await cnRes.json();
+  
+  // Get names from a CDN-accessible names file
+  const namesData = await fetch("https://cdn.jsdelivr.net/npm/@observablehq/plot@0.6/package.json").catch(()=>null);
+  
+  // Use hardcoded numeric->name for top countries, supplement with geo names
+  const isoNumToName = await getCountryNames();
+  
+  countries = geo.features
+    .map(f => ({ feature: f, name: isoNumToName[f.id] || null }))
+    .filter(c => c.name && c.name.length > 0);
+  
+  applyFilter();
+}
+
+async function getCountryNames() {
+  // Fetch from a reliable free endpoint
+  const r = await fetch("https://cdn.jsdelivr.net/npm/country-list@2.3.0/data.json").catch(()=>null);
+  // This gives alpha2->name. We need numeric->name.
+  // Instead use a hardcoded comprehensive map of ISO 3166-1 numeric to common name
+  return numericToName;
+}
+
+const numericToName = {
+  4:"Afghanistan",8:"Albania",12:"Algeria",24:"Angola",32:"Argentina",51:"Armenia",36:"Australia",
+  40:"Austria",31:"Azerbaijan",50:"Bangladesh",112:"Belarus",56:"Belgium",204:"Benin",64:"Bhutan",
+  68:"Bolivia",70:"Bosnia and Herz.",72:"Botswana",76:"Brazil",100:"Bulgaria",854:"Burkina Faso",
+  108:"Burundi",116:"Cambodia",120:"Cameroon",124:"Canada",140:"Central African Rep.",148:"Chad",
+  152:"Chile",156:"China",170:"Colombia",178:"Congo",180:"Dem. Rep. Congo",188:"Costa Rica",
+  191:"Croatia",192:"Cuba",196:"Cyprus",203:"Czechia",208:"Denmark",262:"Djibouti",
+  214:"Dominican Rep.",218:"Ecuador",818:"Egypt",222:"El Salvador",226:"Eq. Guinea",232:"Eritrea",
+  233:"Estonia",231:"Ethiopia",246:"Finland",250:"France",266:"Gabon",270:"Gambia",268:"Georgia",
+  276:"Germany",288:"Ghana",300:"Greece",320:"Guatemala",324:"Guinea",624:"Guinea-Bissau",
+  332:"Haiti",340:"Honduras",348:"Hungary",356:"India",360:"Indonesia",364:"Iran",368:"Iraq",
+  372:"Ireland",376:"Israel",380:"Italy",384:"Ivory Coast",388:"Jamaica",392:"Japan",400:"Jordan",
+  398:"Kazakhstan",404:"Kenya",414:"Kuwait",417:"Kyrgyzstan",418:"Laos",428:"Latvia",422:"Lebanon",
+  426:"Lesotho",430:"Liberia",434:"Libya",440:"Lithuania",442:"Luxembourg",450:"Madagascar",
+  454:"Malawi",458:"Malaysia",466:"Mali",478:"Mauritania",484:"Mexico",498:"Moldova",496:"Mongolia",
+  499:"Montenegro",504:"Morocco",508:"Mozambique",104:"Myanmar",516:"Namibia",524:"Nepal",
+  528:"Netherlands",554:"New Zealand",558:"Nicaragua",562:"Niger",566:"Nigeria",408:"North Korea",
+  578:"Norway",512:"Oman",586:"Pakistan",591:"Panama",598:"Papua New Guinea",600:"Paraguay",
+  604:"Peru",608:"Philippines",616:"Poland",620:"Portugal",634:"Qatar",642:"Romania",
+  643:"Russia",646:"Rwanda",682:"Saudi Arabia",686:"Senegal",694:"Sierra Leone",703:"Slovakia",
+  705:"Slovenia",706:"Somalia",710:"South Africa",410:"South Korea",724:"Spain",144:"Sri Lanka",
+  729:"Sudan",740:"Suriname",752:"Sweden",756:"Switzerland",760:"Syria",762:"Tajikistan",
+  834:"Tanzania",764:"Thailand",626:"Timor-Leste",768:"Togo",780:"Trinidad and Tobago",788:"Tunisia",
+  792:"Turkey",795:"Turkmenistan",800:"Uganda",804:"Ukraine",784:"United Arab Emirates",
+  826:"United Kingdom",840:"United States of America",858:"Uruguay",860:"Uzbekistan",
+  862:"Venezuela",704:"Vietnam",887:"Yemen",894:"Zambia",716:"Zimbabwe",729:"Sudan",
+  275:"Palestine",688:"Serbia",807:"Macedonia",383:"Kosovo",324:"Guinea",516:"Namibia",
+  450:"Madagascar",466:"Mali",478:"Mauritania",548:"Vanuatu",242:"Fiji",540:"New Caledonia",
+  90:"Solomon Is.",196:"Cyprus",191:"Croatia",705:"Slovenia",703:"Slovakia"
+};
+
+function applyFilter() {
+  const region = document.getElementById("region-select").value;
+  filtered = region === "all" ? [...countries] : countries.filter(c => regionMap[c.name] === region);
+  shuffle();
+}
+
+function shuffle() {
+  for (let i = filtered.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [filtered[i], filtered[j]] = [filtered[j], filtered[i]];
+  }
+  idx = 0;
+  revealed = false;
+  showCard();
+}
+
+function showCard() {
+  if (!filtered.length) {
+    document.getElementById("map-svg").innerHTML = '<text x="100" y="105" text-anchor="middle" font-size="12" fill="var(--color-text-secondary)">No countries in this region.</text>';
+    document.getElementById("answer-display").textContent = "";
+    document.getElementById("counter").textContent = "";
+    document.getElementById("region-badge").textContent = "";
+    return;
+  }
+  revealed = false;
+  document.getElementById("answer-display").textContent = "";
+  document.getElementById("reveal-btn").textContent = "Show answer";
+  const c = filtered[idx];
+  renderShape(c.feature);
+  document.getElementById("counter").textContent = (idx + 1) + " / " + filtered.length;
+  document.getElementById("region-badge").textContent = regionMap[c.name] ? regionMap[c.name] : "";
+}
+
+function renderShape(feature) {
+  const svg = document.getElementById("map-svg");
+  
+  // Project using simple equirectangular and fit to viewBox
+  const coords = extractCoords(feature.geometry);
+  if (!coords.length) return;
+  
+  let minX = Infinity, maxX = -Infinity, minY = Infinity, maxY = -Infinity;
+  coords.forEach(([x, y]) => { 
+    if (x < minX) minX = x; if (x > maxX) maxX = x;
+    if (y < minY) minY = y; if (y > maxY) maxY = y;
+  });
+  
+  const pad = 10;
+  const W = 200 - pad*2, H = 200 - pad*2;
+  const scaleX = W / (maxX - minX || 1);
+  const scaleY = H / (maxY - minY || 1);
+  const scale = Math.min(scaleX, scaleY);
+  const offX = pad + (W - (maxX - minX) * scale) / 2;
+  const offY = pad + (H - (maxY - minY) * scale) / 2;
+
+  function project([lon, lat]) {
+    return [offX + (lon - minX) * scale, offY + (maxY - lat) * scale];
+  }
+
+  function ringToPath(ring) {
+    return ring.map((pt, i) => {
+      const [x, y] = project(pt);
+      return (i === 0 ? "M" : "L") + x.toFixed(1) + "," + y.toFixed(1);
+    }).join(" ") + " Z";
+  }
+
+  let d = "";
+  const g = feature.geometry;
+  if (g.type === "Polygon") {
+    g.coordinates.forEach(ring => { d += ringToPath(ring) + " "; });
+  } else if (g.type === "MultiPolygon") {
+    g.coordinates.forEach(poly => poly.forEach(ring => { d += ringToPath(ring) + " "; }));
+  }
+
+  svg.innerHTML = '<path d="' + d + '" fill="var(--color-text-primary)" stroke="var(--color-background-primary)" stroke-width="0.5"/>';
+}
+
+function extractCoords(geometry) {
+  let pts = [];
+  if (geometry.type === "Polygon") {
+    geometry.coordinates.forEach(ring => ring.forEach(pt => pts.push(pt)));
+  } else if (geometry.type === "MultiPolygon") {
+    geometry.coordinates.forEach(poly => poly.forEach(ring => ring.forEach(pt => pts.push(pt))));
+  }
+  return pts;
+}
+
+function reveal() {
+  revealed = true;
+  const c = filtered[idx];
+  document.getElementById("answer-display").textContent = c.name;
+  document.getElementById("reveal-btn").textContent = "✓ Revealed";
+}
+
+function next() {
+  if (!filtered.length) return;
+  idx = (idx + 1) % filtered.length;
+  showCard();
+}
+
+document.getElementById("region-select").addEventListener("change", applyFilter);
+
+loadMap().catch(e => {
+  document.getElementById("map-svg").innerHTML = '<text x="100" y="105" text-anchor="middle" font-size="11" fill="var(--color-text-secondary)">Could not load map data.</text>';
+});
+</script>
