@@ -27,9 +27,11 @@ Thumbs.db
 *.swp
 *.swo
 
-# Generated map files
+# Generated files
 maps/*.svg
 maps/*.png
+capitals_cache.json
+neighbors_cache.json
 
 # Large data files (if regenerated)
 *.json.bak

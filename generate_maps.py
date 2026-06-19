@@ -9,13 +9,35 @@ matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 from matplotlib.patches import Patch
 
-COUNTRIES_FILE = 'countries.json'
-OUTPUT_DIR = 'maps'
-BUFFER_DEG = 0.15   # degrees; catches shared land borders
+# ── paths ─────────────────────────────────────────────────────────────────────
+COUNTRIES_FILE  = 'countries.json'
+CAPITALS_CACHE  = 'capitals_cache.json'
+NEIGHBORS_CACHE = 'neighbors_cache.json'
+OUTPUT_DIR      = 'maps'
 
-COLOR_FOCUS    = '#e74c3c'  # red   – the country itself
-COLOR_NEIGHBOR = '#bdc3c7'  # gray – neighbors
-COLOR_OCEAN    = '#d6eaf8'  # light blue – background
+# ── geometry ──────────────────────────────────────────────────────────────────
+BUFFER_DEG      = 0.15    # catches shared land borders
+PAD_FACTOR      = 0.12    # fraction of max(w,h) added as padding
+PAD_MIN         = 0.8     # minimum padding in degrees
+
+# ── colors ────────────────────────────────────────────────────────────────────
+COLOR_FOCUS     = '#e74c3c'   # the country itself
+COLOR_NEIGHBOR  = '#bdc3c7'   # neighbors
+COLOR_OCEAN     = '#d6eaf8'   # background
+COLOR_LABEL     = '#1a252f'   # neighbor labels and capital text
+COLOR_CAP_DOT   = 'white'     # capital marker fill
+
+# ── figure ────────────────────────────────────────────────────────────────────
+FIG_SIZE          = (12, 7)
+TITLE_FONTSIZE    = 17
+NEIGHBOR_FONTSIZE = 7
+CAPITAL_FONTSIZE  = 7.5
+LEGEND_FONTSIZE   = 9
+BORDER_LINEWIDTH  = 0.5
+FOCUS_LINEWIDTH   = 0.6
+CAP_MARKERSIZE    = 5
+CAP_EDGE_WIDTH    = 0.8
+CAP_LABEL_OFFSET  = 0.1   # degrees; horizontal nudge on the capital label
 
 # ── name mapping: countries.json name → capitals dataset name ─────────────────
 NAME_MAP = {
@@ -74,64 +96,94 @@ HARDCODED = {
     'Nauru':        ('Yaren',       166.92,  -0.55),
 }
 
-# ── fetch capitals ─────────────────────────────────────────────────────────────
-print('Fetching capitals …')
+# ── CLI: optional list of country names to render ─────────────────────────────
+target_countries = sys.argv[1:] if len(sys.argv) > 1 else []
+
+# ── fetch / cache capitals ────────────────────────────────────────────────────
 capitals = {}   # our-country-name → {'city': str, 'lon': float, 'lat': float}
-try:
-    url = 'https://raw.githubusercontent.com/Stefie/geojson-world/master/capitals.geojson'
-    with urllib.request.urlopen(url, timeout=10) as r:
-        cap_raw = json.loads(r.read())
-    dataset = {}
-    for feat in cap_raw['features']:
-        p = feat['properties']
-        if p.get('country') and p.get('city'):
-            lon, lat = feat['geometry']['coordinates']
-            dataset[p['country']] = {'city': p['city'], 'lon': lon, 'lat': lat}
 
-    with open(COUNTRIES_FILE) as f:
-        _tmp = json.load(f)
-    for feat in _tmp['features']:
-        name = feat['properties']['name']
-        key  = NAME_MAP.get(name, name)          # translate if needed
-        if key in dataset:
-            capitals[name] = dataset[key]
-        elif name in HARDCODED:
-            city, lon, lat = HARDCODED[name]
-            capitals[name] = {'city': city, 'lon': lon, 'lat': lat}
-    print(f'  loaded {len(capitals)} capitals')
-except Exception as e:
-    print(f'  warning: could not fetch capitals ({e})')
+if os.path.exists(CAPITALS_CACHE):
+    print(f'Loading capitals from cache ({CAPITALS_CACHE}) …')
+    with open(CAPITALS_CACHE) as f:
+        capitals = json.load(f)
+else:
+    print('Fetching capitals …')
+    try:
+        url = 'https://raw.githubusercontent.com/Stefie/geojson-world/master/capitals.geojson'
+        with urllib.request.urlopen(url, timeout=10) as r:
+            cap_raw = json.loads(r.read())
+        dataset = {}
+        for feat in cap_raw['features']:
+            p = feat['properties']
+            if p.get('country') and p.get('city'):
+                lon, lat = feat['geometry']['coordinates']
+                dataset[p['country']] = {'city': p['city'], 'lon': lon, 'lat': lat}
 
-# ── load ──────────────────────────────────────────────────────────────────────
+        with open(COUNTRIES_FILE) as f:
+            _tmp = json.load(f)
+        for feat in _tmp['features']:
+            name = feat['properties']['name']
+            key  = NAME_MAP.get(name, name)
+            if key in dataset:
+                capitals[name] = dataset[key]
+            elif name in HARDCODED:
+                city, lon, lat = HARDCODED[name]
+                capitals[name] = {'city': city, 'lon': lon, 'lat': lat}
+
+        with open(CAPITALS_CACHE, 'w') as f:
+            json.dump(capitals, f)
+        print(f'  loaded {len(capitals)} capitals (cached to {CAPITALS_CACHE})')
+    except Exception as e:
+        print(f'  warning: could not fetch capitals ({e})')
+
+# ── load geodata ───────────────────────────────────────────────────────────────
 with open(COUNTRIES_FILE) as f:
     data = json.load(f)
 
 gdf = gpd.GeoDataFrame.from_features(data['features'])
 gdf = gdf.set_crs('EPSG:4326').reset_index(drop=True)
-# drop countries with null/empty geometry (e.g. Vatican in this dataset)
 gdf = gdf[~(gdf.geometry.is_empty | gdf.geometry.isna())].reset_index(drop=True)
 
-# ── compute neighbors ─────────────────────────────────────────────────────────
-print('Computing neighbors …')
-with warnings.catch_warnings():
-    warnings.simplefilter('ignore')
-    buffered = gdf.geometry.buffer(BUFFER_DEG)
+# ── filter to requested countries if provided ─────────────────────────────────
+if target_countries:
+    missing = [c for c in target_countries if c not in gdf['name'].values]
+    if missing:
+        print(f'Unknown country name(s): {", ".join(missing)}')
+        sys.exit(1)
+    render_gdf = gdf[gdf['name'].isin(target_countries)]
+else:
+    render_gdf = gdf
 
-neighbor_map = {}
-for i, row in gdf.iterrows():
-    nbrs = []
-    for j, row2 in gdf.iterrows():
-        if i == j:
-            continue
-        if buffered[i].intersects(gdf.geometry[j]):
-            nbrs.append(row2['name'])
-    neighbor_map[row['name']] = nbrs
+# ── compute / cache neighbors ──────────────────────────────────────────────────
+if os.path.exists(NEIGHBORS_CACHE):
+    print(f'Loading neighbors from cache ({NEIGHBORS_CACHE}) …')
+    with open(NEIGHBORS_CACHE) as f:
+        neighbor_map = json.load(f)
+else:
+    print('Computing neighbors …')
+    with warnings.catch_warnings():
+        warnings.simplefilter('ignore')
+        buffered = gdf.geometry.buffer(BUFFER_DEG)
 
-# ── render ────────────────────────────────────────────────────────────────────
+    neighbor_map = {}
+    for i, row in gdf.iterrows():
+        nbrs = []
+        for j, row2 in gdf.iterrows():
+            if i == j:
+                continue
+            if buffered[i].intersects(gdf.geometry[j]):
+                nbrs.append(row2['name'])
+        neighbor_map[row['name']] = nbrs
+
+    with open(NEIGHBORS_CACHE, 'w') as f:
+        json.dump(neighbor_map, f)
+    print(f'  computed {len(neighbor_map)} entries (cached to {NEIGHBORS_CACHE})')
+
+# ── render ─────────────────────────────────────────────────────────────────────
 os.makedirs(OUTPUT_DIR, exist_ok=True)
-total = len(gdf)
+total = len(render_gdf)
 
-for idx, (_, row) in enumerate(gdf.iterrows(), 1):
+for idx, (_, row) in enumerate(render_gdf.iterrows(), 1):
     country = row['name']
     nbr_names = neighbor_map[country]
 
@@ -141,58 +193,52 @@ for idx, (_, row) in enumerate(gdf.iterrows(), 1):
     focus_mask = gdf['name'] == country
     nbr_mask   = gdf['name'].isin(nbr_names)
 
-    # ── extent: centered on the country itself, small border padding ──────────
     minx, miny, maxx, maxy = gdf[focus_mask].total_bounds
     w, h = maxx - minx, maxy - miny
-    pad = max(w, h) * 0.12 + 0.8   # small padding so borders are visible
+    pad = max(w, h) * PAD_FACTOR + PAD_MIN
 
     xlim = (minx - pad, maxx + pad)
     ylim = (miny - pad, maxy + pad)
 
-    fig, ax = plt.subplots(figsize=(12, 7))
+    fig, ax = plt.subplots(figsize=FIG_SIZE)
     fig.patch.set_facecolor(COLOR_OCEAN)
     ax.set_facecolor(COLOR_OCEAN)
 
-    # draw neighbors first (they'll be clipped by the axes limits)
     if nbr_mask.any():
-        gdf[nbr_mask].plot(ax=ax, color=COLOR_NEIGHBOR, edgecolor='#ffffff', linewidth=0.5)
-    # draw the country on top so it's never obscured
-    gdf[focus_mask].plot(ax=ax, color=COLOR_FOCUS, edgecolor='#ffffff', linewidth=0.6)
+        gdf[nbr_mask].plot(ax=ax, color=COLOR_NEIGHBOR, edgecolor='#ffffff', linewidth=BORDER_LINEWIDTH)
+    gdf[focus_mask].plot(ax=ax, color=COLOR_FOCUS, edgecolor='#ffffff', linewidth=FOCUS_LINEWIDTH)
 
-    # ── neighbor labels ───────────────────────────────────────────────────────
     for _, nb in gdf[nbr_mask].iterrows():
         pt = nb.geometry.representative_point()
-        # only label if the point falls inside our view
         if xlim[0] <= pt.x <= xlim[1] and ylim[0] <= pt.y <= ylim[1]:
             ax.text(
                 pt.x, pt.y, nb['name'],
-                fontsize=7, ha='center', va='center', color='#1a252f',
+                fontsize=NEIGHBOR_FONTSIZE, ha='center', va='center', color=COLOR_LABEL,
                 fontweight='bold',
                 bbox=dict(boxstyle='round,pad=0.2', facecolor='white',
                           alpha=0.6, edgecolor='none'),
                 clip_on=True,
             )
 
-    # ── capital marker ────────────────────────────────────────────────────────
     cap = capitals.get(country)
     if cap:
         cx, cy = cap['lon'], cap['lat']
-        ax.plot(cx, cy, marker='o', markersize=5, color='white',
-                markeredgecolor='#1a252f', markeredgewidth=0.8, zorder=5)
-        ax.text(cx + (maxx - minx) * 0.015 + 0.1, cy, cap['city'],
-                fontsize=7.5, va='center', color='white', fontweight='bold',
+        ax.plot(cx, cy, marker='o', markersize=CAP_MARKERSIZE, color=COLOR_CAP_DOT,
+                markeredgecolor=COLOR_LABEL, markeredgewidth=CAP_EDGE_WIDTH, zorder=5)
+        ax.text(cx + (maxx - minx) * 0.015 + CAP_LABEL_OFFSET, cy, cap['city'],
+                fontsize=CAPITAL_FONTSIZE, va='center', color='white', fontweight='bold',
                 clip_on=True, zorder=5)
 
     ax.set_xlim(*xlim)
     ax.set_ylim(*ylim)
     ax.set_axis_off()
-    ax.set_title(country, fontsize=17, fontweight='bold', pad=10, color='#1a252f')
+    ax.set_title(country, fontsize=TITLE_FONTSIZE, fontweight='bold', pad=10, color=COLOR_LABEL)
 
     legend_handles = [
         Patch(facecolor=COLOR_FOCUS,    edgecolor='#888', label=country),
         Patch(facecolor=COLOR_NEIGHBOR, edgecolor='#888', label='Neighbors'),
     ]
-    ax.legend(handles=legend_handles, loc='lower left', fontsize=9,
+    ax.legend(handles=legend_handles, loc='lower left', fontsize=LEGEND_FONTSIZE,
               framealpha=0.85, edgecolor='#cccccc')
 
     plt.tight_layout(pad=0.4)
