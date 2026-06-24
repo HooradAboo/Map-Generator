@@ -20,12 +20,135 @@ PAD_FACTOR      = 0.12    # fraction of max(w,h) added as padding
 PAD_MIN         = 0.8     # minimum padding in degrees
 
 # ── colors ────────────────────────────────────────────────────────────────────
-COLOR_FOCUS     = '#e74c3c'   # the country itself
 COLOR_NEIGHBOR  = '#bdc3c7'   # neighbors
 COLOR_OCEAN     = '#d6eaf8'   # background
 COLOR_LABEL     = '#1a252f'   # capital text
 COLOR_NBR_LABEL = '#d6eaf8'   # neighbor country name labels
-COLOR_CAP_DOT   = '#d6eaf8'     # capital marker fill
+COLOR_CAP_DOT   = '#d6eaf8'   # capital marker fill
+
+CONTINENT_COLORS = {
+    'Africa':        '#E67E22',  # warm orange
+    'Asia':          '#9B59B6',  # amethyst purple
+    'Europe':        '#2980B9',  # steel blue
+    'North America': '#27AE60',  # emerald green
+    'South America': '#F1C40F',  # golden yellow
+    'Oceania':       '#E91E8C',  # hot pink
+    'Antarctica':    '#95A5A6',  # silver grey
+    'Other':         '#7F8C8D',  # dark grey fallback
+}
+
+COUNTRY_CONTINENT = {
+    # Africa
+    'Algeria': 'Africa', 'Angola': 'Africa', 'Benin': 'Africa',
+    'Botswana': 'Africa', 'Burkina Faso': 'Africa', 'Burundi': 'Africa',
+    'Cabo Verde': 'Africa', 'Cameroon': 'Africa', 'Central African Rep.': 'Africa',
+    'Chad': 'Africa', 'Comoros': 'Africa', 'Congo': 'Africa',
+    "Côte d'Ivoire": 'Africa', 'Dem. Rep. Congo': 'Africa', 'Djibouti': 'Africa',
+    'Egypt': 'Africa', 'Eq. Guinea': 'Africa', 'Eritrea': 'Africa',
+    'Ethiopia': 'Africa', 'Gabon': 'Africa', 'Gambia': 'Africa',
+    'Ghana': 'Africa', 'Guinea': 'Africa', 'Guinea-Bissau': 'Africa',
+    'Kenya': 'Africa', 'Lesotho': 'Africa', 'Liberia': 'Africa',
+    'Libya': 'Africa', 'Madagascar': 'Africa', 'Malawi': 'Africa',
+    'Mali': 'Africa', 'Mauritania': 'Africa', 'Mauritius': 'Africa',
+    'Morocco': 'Africa', 'Mozambique': 'Africa', 'Namibia': 'Africa',
+    'Niger': 'Africa', 'Nigeria': 'Africa', 'Rwanda': 'Africa',
+    'Saint Helena': 'Africa', 'São Tomé and Principe': 'Africa',
+    'Senegal': 'Africa', 'Seychelles': 'Africa', 'Sierra Leone': 'Africa',
+    'Somalia': 'Africa', 'Somaliland': 'Africa', 'South Africa': 'Africa',
+    'S. Sudan': 'Africa', 'Sudan': 'Africa', 'Tanzania': 'Africa',
+    'Togo': 'Africa', 'Tunisia': 'Africa', 'Uganda': 'Africa',
+    'W. Sahara': 'Africa', 'Zambia': 'Africa', 'Zimbabwe': 'Africa',
+    'eSwatini': 'Africa', 'Br. Indian Ocean Ter.': 'Africa',
+
+    # Asia
+    'Afghanistan': 'Asia', 'Armenia': 'Asia', 'Azerbaijan': 'Asia',
+    'Bahrain': 'Asia', 'Bangladesh': 'Asia', 'Bhutan': 'Asia',
+    'Brunei': 'Asia', 'Cambodia': 'Asia', 'China': 'Asia',
+    'Georgia': 'Asia', 'Hong Kong': 'Asia', 'India': 'Asia',
+    'Indonesia': 'Asia', 'Iran': 'Asia', 'Iraq': 'Asia',
+    'Israel': 'Asia', 'Japan': 'Asia', 'Jordan': 'Asia',
+    'Kazakhstan': 'Asia', 'Kuwait': 'Asia', 'Kyrgyzstan': 'Asia',
+    'Laos': 'Asia', 'Lebanon': 'Asia', 'Macao': 'Asia',
+    'Malaysia': 'Asia', 'Maldives': 'Asia', 'Mongolia': 'Asia',
+    'Myanmar': 'Asia', 'N. Cyprus': 'Asia', 'Nepal': 'Asia',
+    'North Korea': 'Asia', 'Oman': 'Asia', 'Pakistan': 'Asia',
+    'Palestine': 'Asia', 'Philippines': 'Asia', 'Qatar': 'Asia',
+    'Saudi Arabia': 'Asia', 'Singapore': 'Asia', 'South Korea': 'Asia',
+    'Sri Lanka': 'Asia', 'Syria': 'Asia', 'Taiwan': 'Asia',
+    'Tajikistan': 'Asia', 'Thailand': 'Asia', 'Timor-Leste': 'Asia',
+    'Turkey': 'Asia', 'Turkmenistan': 'Asia', 'United Arab Emirates': 'Asia',
+    'Uzbekistan': 'Asia', 'Vietnam': 'Asia', 'Yemen': 'Asia',
+    'Cyprus': 'Asia', 'Baikonur': 'Asia', 'Siachen Glacier': 'Asia',
+    'Scarborough Reef': 'Asia', 'Spratly Is.': 'Asia',
+
+    # Europe
+    'Albania': 'Europe', 'Andorra': 'Europe', 'Austria': 'Europe',
+    'Belarus': 'Europe', 'Belgium': 'Europe', 'Bosnia and Herz.': 'Europe',
+    'Bulgaria': 'Europe', 'Croatia': 'Europe', 'Czechia': 'Europe',
+    'Denmark': 'Europe', 'Estonia': 'Europe', 'Faeroe Is.': 'Europe',
+    'Finland': 'Europe', 'France': 'Europe', 'Germany': 'Europe',
+    'Gibraltar': 'Europe', 'Greece': 'Europe', 'Guernsey': 'Europe',
+    'Hungary': 'Europe', 'Iceland': 'Europe', 'Ireland': 'Europe',
+    'Isle of Man': 'Europe', 'Italy': 'Europe', 'Jersey': 'Europe',
+    'Kosovo': 'Europe', 'Latvia': 'Europe', 'Liechtenstein': 'Europe',
+    'Lithuania': 'Europe', 'Luxembourg': 'Europe', 'Macedonia': 'Europe',
+    'Malta': 'Europe', 'Moldova': 'Europe', 'Monaco': 'Europe',
+    'Montenegro': 'Europe', 'Netherlands': 'Europe', 'Norway': 'Europe',
+    'Poland': 'Europe', 'Portugal': 'Europe', 'Romania': 'Europe',
+    'Russia': 'Europe', 'San Marino': 'Europe', 'Serbia': 'Europe',
+    'Slovakia': 'Europe', 'Slovenia': 'Europe', 'Spain': 'Europe',
+    'Sweden': 'Europe', 'Switzerland': 'Europe', 'Ukraine': 'Europe',
+    'United Kingdom': 'Europe', 'Vatican': 'Europe', 'Åland': 'Europe',
+    'Akrotiri': 'Europe', 'Dhekelia': 'Europe',
+    'Cyprus U.N. Buffer Zone': 'Europe',
+
+    # North America
+    'Anguilla': 'North America', 'Antigua and Barb.': 'North America',
+    'Aruba': 'North America', 'Bahamas': 'North America',
+    'Barbados': 'North America', 'Belize': 'North America',
+    'Bermuda': 'North America', 'British Virgin Is.': 'North America',
+    'Canada': 'North America', 'Cayman Is.': 'North America',
+    'Clipperton I.': 'North America', 'Cuba': 'North America',
+    'Curaçao': 'North America', 'Dominica': 'North America',
+    'Dominican Rep.': 'North America', 'El Salvador': 'North America',
+    'Greenland': 'North America', 'Grenada': 'North America',
+    'Guatemala': 'North America', 'Haiti': 'North America',
+    'Honduras': 'North America', 'Jamaica': 'North America',
+    'Mexico': 'North America', 'Montserrat': 'North America',
+    'Nicaragua': 'North America', 'Panama': 'North America',
+    'Puerto Rico': 'North America', 'Sint Maarten': 'North America',
+    'St-Barthélemy': 'North America', 'St-Martin': 'North America',
+    'St. Kitts and Nevis': 'North America', 'St. Pierre and Miquelon': 'North America',
+    'St. Vin. and Gren.': 'North America', 'Trinidad and Tobago': 'North America',
+    'Turks and Caicos Is.': 'North America', 'U.S. Minor Outlying Is.': 'North America',
+    'U.S. Virgin Is.': 'North America', 'USNB Guantanamo Bay': 'North America',
+    'United States of America': 'North America', 'Bajo Nuevo Bank': 'North America',
+    'Serranilla Bank': 'North America',
+
+    # South America
+    'Argentina': 'South America', 'Bolivia': 'South America',
+    'Brazil': 'South America', 'Chile': 'South America',
+    'Colombia': 'South America', 'Ecuador': 'South America',
+    'Falkland Is.': 'South America', 'Guyana': 'South America',
+    'Paraguay': 'South America', 'Peru': 'South America',
+    'S. Geo. and the Is.': 'South America', 'Suriname': 'South America',
+    'Uruguay': 'South America', 'Venezuela': 'South America',
+
+    # Oceania
+    'American Samoa': 'Oceania', 'Ashmore and Cartier Is.': 'Oceania',
+    'Australia': 'Oceania', 'Cook Is.': 'Oceania', 'Coral Sea Is.': 'Oceania',
+    'Fiji': 'Oceania', 'Fr. Polynesia': 'Oceania', 'Guam': 'Oceania',
+    'Heard I. and McDonald Is.': 'Oceania', 'Indian Ocean Ter.': 'Oceania',
+    'Kiribati': 'Oceania', 'Marshall Is.': 'Oceania', 'Micronesia': 'Oceania',
+    'Nauru': 'Oceania', 'New Caledonia': 'Oceania', 'New Zealand': 'Oceania',
+    'Niue': 'Oceania', 'Norfolk Island': 'Oceania', 'N. Mariana Is.': 'Oceania',
+    'Palau': 'Oceania', 'Papua New Guinea': 'Oceania', 'Pitcairn Is.': 'Oceania',
+    'Samoa': 'Oceania', 'Solomon Is.': 'Oceania', 'Tonga': 'Oceania',
+    'Tuvalu': 'Oceania', 'Vanuatu': 'Oceania', 'Wallis and Futuna Is.': 'Oceania',
+
+    # Antarctica
+    'Antarctica': 'Antarctica', 'Fr. S. Antarctic Lands': 'Antarctica',
+}
 
 # ── figure ────────────────────────────────────────────────────────────────────
 FIG_SIZE          = (18, 8)
@@ -207,12 +330,15 @@ for idx, (_, row) in enumerate(render_gdf.iterrows(), 1):
     xlim = (cx - fw / 2, cx + fw / 2)
     ylim = (cy - fh / 2, cy + fh / 2)
 
+    continent = COUNTRY_CONTINENT.get(country, 'Other')
+    color_focus = CONTINENT_COLORS[continent]
+
     fig, ax = plt.subplots(figsize=FIG_SIZE)
     fig.patch.set_facecolor(COLOR_OCEAN)
     ax.set_facecolor(COLOR_OCEAN)
 
     gdf[~focus_mask].plot(ax=ax, color=COLOR_NEIGHBOR, edgecolor='#ffffff', linewidth=BORDER_LINEWIDTH)
-    gdf[focus_mask].plot(ax=ax, color=COLOR_FOCUS, edgecolor='#ffffff', linewidth=FOCUS_LINEWIDTH)
+    gdf[focus_mask].plot(ax=ax, color=color_focus, edgecolor='#ffffff', linewidth=FOCUS_LINEWIDTH)
 
     for _, nb in gdf[~focus_mask].iterrows():
         pt = nb.geometry.representative_point()
